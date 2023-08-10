@@ -1,78 +1,97 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+              
+              Expanded(
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+                child: ElevatedButton(
+                  onPressed: () {
 
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 60, 63, 241),
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text('Buton 1'),
+                ),
+              ),
 
+              SizedBox(height: 10),
 
-  final String title;
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 187, 77, 238),
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text('Buton 2'),
+                ),
+              ),
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+              SizedBox(height: 10),
 
-  void _incrementCounter() {
-    setState(() {
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
 
-      _counter++;
-    });
-  }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 241, 161, 85),
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text('Buton 3'),
+                ),
+              ),
 
-  @override
-  Widget build(BuildContext context) {
+              SizedBox(height: 10),
 
-    return Scaffold(
-      appBar: AppBar(
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
 
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 240, 77, 28),
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text('Buton 4'),
+                ),
+              ),
 
-        title: Text(widget.title),
-      ),
-      body: Center(
+              SizedBox(height: 10),
+              
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
 
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 20, 191, 197),
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text('Buton 5'),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
