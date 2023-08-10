@@ -12,15 +12,12 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.all(10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               
               Expanded(
                 
                 child: ElevatedButton( 
-
-                  
                   onPressed: () {
                   },
                   
@@ -29,14 +26,19 @@ class MyApp extends StatelessWidget {
                     onPrimary: Colors.white,
                   ),
                   child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                        Image.asset(
-                      'assets/salata.png', // Resim yolunu belirtin
+                      'assets/images/salata.png', // Resim yolunu belirtin
                       width: 200, // Resim genişliği
                       height: 200, // Resim yüksekliği
                     ),
-                    Text('Buton 2'),
+                    SizedBox(width: 10),
+                    Text('SALATALAR',
+                    style: TextStyle(
+                      fontFamily: 'Caveat',
+                      fontSize: 35,
+                    ),
+                    ),
                   ],
                 ),
                 ),
