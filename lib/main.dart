@@ -9,27 +9,39 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
+        body: Padding(
+          padding: EdgeInsets.all(10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-
               
               Expanded(
+                
+                child: ElevatedButton( 
 
-                child: ElevatedButton(
+                  
                   onPressed: () {
-
                   },
+                  
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromARGB(255, 60, 63, 241),
                     onPrimary: Colors.white,
                   ),
-                  child: Text('Buton 1'),
+                  child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                       Image.asset(
+                      'assets/salata.png', // Resim yolunu belirtin
+                      width: 200, // Resim genişliği
+                      height: 200, // Resim yüksekliği
+                    ),
+                    Text('Buton 2'),
+                  ],
+                ),
                 ),
               ),
-
+            
               SizedBox(height: 10),
 
               Expanded(
@@ -76,7 +88,7 @@ class MyApp extends StatelessWidget {
               ),
 
               SizedBox(height: 10),
-              
+
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
