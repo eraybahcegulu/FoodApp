@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                     const Text('SALATALAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 35,
+                      fontSize: 28,
                     ),
                     ),
                   ],
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
                     const Text('PİZZALAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 35,
+                      fontSize: 28,
                     ),
                     ),
                   ],
@@ -129,15 +129,15 @@ class MyApp extends StatelessWidget {
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/pizza.png',
+                      'assets/images/tatlı.png',
                       width: 200,
                       height: 200, 
                     ),
                     const SizedBox(width: 10),
-                    const Text('',
+                    const Text('TATLILAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 35,
+                      fontSize: 28,
                     ),
                     ),
                   ],
