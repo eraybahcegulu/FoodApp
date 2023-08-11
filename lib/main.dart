@@ -82,30 +82,66 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 10),
 
               Expanded(
-                child: ElevatedButton(
+                
+                child: ElevatedButton( 
                   onPressed: () {
-
                   },
+                  
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromARGB(255, 240, 77, 28),
+                    // ignore: deprecated_member_use
+                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
-                  child: const Text('Buton 4'),
+                  child: Row(
+                  children: [
+                       Image.asset(
+                      'assets/images/makarna.png',
+                      width: 200,
+                      height: 200, 
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('MAKARNALAR',
+                    style: TextStyle(
+                      fontFamily: 'Caveat',
+                      fontSize: 28,
+                    ),
+                    ),
+                  ],
+                ),
                 ),
               ),
 
               const SizedBox(height: 10),
 
               Expanded(
-                child: ElevatedButton(
+                
+                child: ElevatedButton( 
                   onPressed: () {
-
                   },
+                  
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromARGB(255, 20, 191, 197),
+                    // ignore: deprecated_member_use
+                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
-                  child: const Text('Buton 5'),
+                  child: Row(
+                  children: [
+                       Image.asset(
+                      'assets/images/pizza.png',
+                      width: 200,
+                      height: 200, 
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('',
+                    style: TextStyle(
+                      fontFamily: 'Caveat',
+                      fontSize: 35,
+                    ),
+                    ),
+                  ],
+                ),
                 ),
               ),
             ],
