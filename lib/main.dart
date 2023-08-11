@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -22,18 +22,20 @@ class MyApp extends StatelessWidget {
                   },
                   
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 60, 63, 241),
+                    // ignore: deprecated_member_use
+                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/salata.png', // Resim yolunu belirtin
-                      width: 200, // Resim genişliği
-                      height: 200, // Resim yüksekliği
+                      'assets/images/salata.png',
+                      width: 200,
+                      height: 200, 
                     ),
-                    SizedBox(width: 10),
-                    Text('SALATALAR',
+                    const SizedBox(width: 10),
+                    const Text('SALATALAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
                       fontSize: 35,
@@ -44,22 +46,40 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               Expanded(
-                child: ElevatedButton(
+                
+                child: ElevatedButton( 
                   onPressed: () {
-
                   },
+                  
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 187, 77, 238),
+                    // ignore: deprecated_member_use
+                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
-                  child: Text('Buton 2'),
+                  child: Row(
+                  children: [
+                       Image.asset(
+                      'assets/images/pizza.png',
+                      width: 200,
+                      height: 200, 
+                    ),
+                    const SizedBox(width: 10),
+                    const Text('PİZZALAR',
+                    style: TextStyle(
+                      fontFamily: 'Caveat',
+                      fontSize: 35,
+                    ),
+                    ),
+                  ],
+                ),
                 ),
               ),
 
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               Expanded(
                 child: ElevatedButton(
@@ -67,14 +87,14 @@ class MyApp extends StatelessWidget {
 
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 241, 161, 85),
+                    primary: const Color.fromARGB(255, 240, 77, 28),
                     onPrimary: Colors.white,
                   ),
-                  child: Text('Buton 3'),
+                  child: const Text('Buton 4'),
                 ),
               ),
 
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               Expanded(
                 child: ElevatedButton(
@@ -82,25 +102,10 @@ class MyApp extends StatelessWidget {
 
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 240, 77, 28),
+                    primary: const Color.fromARGB(255, 20, 191, 197),
                     onPrimary: Colors.white,
                   ),
-                  child: Text('Buton 4'),
-                ),
-              ),
-
-              SizedBox(height: 10),
-
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 20, 191, 197),
-                    onPrimary: Colors.white,
-                  ),
-                  child: Text('Buton 5'),
+                  child: const Text('Buton 5'),
                 ),
               ),
             ],
