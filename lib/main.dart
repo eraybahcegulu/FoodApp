@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:foodapp/salata.dart';
+import 'package:foodapp/views/salata.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+
+void main(){
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -148,35 +152,6 @@ class Main extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Caveat',
                       fontSize: 35,
-                    ),
-                    ),
-                  ],
-                ),
-                ),
-              ),
-
-              const SizedBox(height: 10),
-
-              Expanded(
-                
-                child: ElevatedButton( 
-                  onPressed: () {
-                  },
-                  
-                  style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
-                    primary: Color.fromARGB(255, 203, 224, 108),
-                    // ignore: deprecated_member_use
-                    onPrimary: const Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(width: 10),
-                    Text('NOTLARIM',
-                    style: TextStyle(
-                      fontFamily: 'Caveat',
-                      fontSize: 50,
                     ),
                     ),
                   ],
