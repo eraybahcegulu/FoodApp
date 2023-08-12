@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/salata.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: Main());
+  }
+}
+
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,8 +28,9 @@ class MyApp extends StatelessWidget {
                 
                 child: ElevatedButton( 
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Salata()),
+            );
                   },
-                  
                   style: ElevatedButton.styleFrom(
                     // ignore: deprecated_member_use
                     primary: const Color.fromARGB(255, 60, 63, 241),
