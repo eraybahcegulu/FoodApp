@@ -33,7 +33,7 @@ class Main extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     // ignore: deprecated_member_use
-                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    primary: Colors.red,
                     // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
@@ -41,14 +41,14 @@ class Main extends StatelessWidget {
                   children: [
                        Image.asset(
                       'assets/images/menu/salata.png',
-                      width: 200,
+                      width: 180,
                       height: 200,
                     ),
                     const SizedBox(width: 10),
                     const Text('SALATALAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 28,
+                      fontSize: 35,
                     ),
                     ),
                   ],
@@ -66,7 +66,7 @@ class Main extends StatelessWidget {
                   
                   style: ElevatedButton.styleFrom(
                     // ignore: deprecated_member_use
-                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    primary: Colors.red,
                     // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
@@ -74,14 +74,14 @@ class Main extends StatelessWidget {
                   children: [
                        Image.asset(
                       'assets/images/menu/pizza.png',
-                      width: 200,
+                      width: 180,
                       height: 200, 
                     ),
                     const SizedBox(width: 10),
                     const Text('PİZZALAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 28,
+                      fontSize: 35,
                     ),
                     ),
                   ],
@@ -99,7 +99,7 @@ class Main extends StatelessWidget {
                   
                   style: ElevatedButton.styleFrom(
                     // ignore: deprecated_member_use
-                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    primary: Colors.red,
                     // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
@@ -107,14 +107,14 @@ class Main extends StatelessWidget {
                   children: [
                        Image.asset(
                       'assets/images/menu/makarna.png',
-                      width: 200,
+                      width: 180,
                       height: 200, 
                     ),
                     const SizedBox(width: 10),
                     const Text('MAKARNALAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 28,
+                      fontSize: 32,
                     ),
                     ),
                   ],
@@ -132,7 +132,7 @@ class Main extends StatelessWidget {
                   
                   style: ElevatedButton.styleFrom(
                     // ignore: deprecated_member_use
-                    primary: const Color.fromARGB(255, 60, 63, 241),
+                    primary: Colors.red,
                     // ignore: deprecated_member_use
                     onPrimary: Colors.white,
                   ),
@@ -140,14 +140,43 @@ class Main extends StatelessWidget {
                   children: [
                        Image.asset(
                       'assets/images/menu/tatli.png',
-                      width: 200,
+                      width: 180,
                       height: 200, 
                     ),
                     const SizedBox(width: 10),
                     const Text('TATLILAR',
                     style: TextStyle(
                       fontFamily: 'Caveat',
-                      fontSize: 28,
+                      fontSize: 35,
+                    ),
+                    ),
+                  ],
+                ),
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              Expanded(
+                
+                child: ElevatedButton( 
+                  onPressed: () {
+                  },
+                  
+                  style: ElevatedButton.styleFrom(
+                    // ignore: deprecated_member_use
+                    primary: Color.fromARGB(255, 203, 224, 108),
+                    // ignore: deprecated_member_use
+                    onPrimary: const Color.fromARGB(255, 0, 0, 0),
+                  ),
+                  child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(width: 10),
+                    Text('NOTLARIM',
+                    style: TextStyle(
+                      fontFamily: 'Caveat',
+                      fontSize: 50,
                     ),
                     ),
                   ],
