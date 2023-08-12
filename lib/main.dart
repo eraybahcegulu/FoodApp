@@ -139,7 +139,7 @@ class Main extends StatelessWidget {
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/menu/tatlı.png',
+                      'assets/images/menu/tatli.png',
                       width: 200,
                       height: 200, 
                     ),
