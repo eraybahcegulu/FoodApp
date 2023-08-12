@@ -40,9 +40,9 @@ class Main extends StatelessWidget {
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/salata.png',
+                      'assets/images/menu/salata.png',
                       width: 200,
-                      height: 200, 
+                      height: 200,
                     ),
                     const SizedBox(width: 10),
                     const Text('SALATALAR',
@@ -73,7 +73,7 @@ class Main extends StatelessWidget {
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/pizza.png',
+                      'assets/images/menu/pizza.png',
                       width: 200,
                       height: 200, 
                     ),
@@ -106,7 +106,7 @@ class Main extends StatelessWidget {
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/makarna.png',
+                      'assets/images/menu/makarna.png',
                       width: 200,
                       height: 200, 
                     ),
@@ -139,7 +139,7 @@ class Main extends StatelessWidget {
                   child: Row(
                   children: [
                        Image.asset(
-                      'assets/images/tatlı.png',
+                      'assets/images/menu/tatlı.png',
                       width: 200,
                       height: 200, 
                     ),
