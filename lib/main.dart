@@ -36,9 +36,9 @@ class Main extends StatelessWidget {
             );
                   },
                   style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
+                    
                     primary: Colors.red,
-                    // ignore: deprecated_member_use
+                    
                     onPrimary: Colors.white,
                   ),
                   child: Row(
@@ -69,9 +69,9 @@ class Main extends StatelessWidget {
                   },
                   
                   style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
+                    
                     primary: Colors.red,
-                    // ignore: deprecated_member_use
+                   
                     onPrimary: Colors.white,
                   ),
                   child: Row(
@@ -102,9 +102,9 @@ class Main extends StatelessWidget {
                   },
                   
                   style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
+                    
                     primary: Colors.red,
-                    // ignore: deprecated_member_use
+                    
                     onPrimary: Colors.white,
                   ),
                   child: Row(
@@ -135,9 +135,9 @@ class Main extends StatelessWidget {
                   },
                   
                   style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
+                    
                     primary: Colors.red,
-                    // ignore: deprecated_member_use
+                    
                     onPrimary: Colors.white,
                   ),
                   child: Row(
