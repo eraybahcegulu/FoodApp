@@ -359,7 +359,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                               style: GoogleFonts.caveat( fontSize: textFontSize, fontWeight: FontWeight.w800),
 
                             ),
-                            SizedBox(height: MediaQuery.of(context).size.height * 0.04,),
+                            SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(

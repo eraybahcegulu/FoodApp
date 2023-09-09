@@ -81,7 +81,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/menu/pizza.png',
+                        'assets/images/menu/pizza.jpg',
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: MediaQuery.of(context).size.height * 0.2,
                       ),
@@ -106,7 +106,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/menu/makarna.png',
+                        'assets/images/menu/makarna.jpg',
                         width: MediaQuery.of(context).size.width * 0.4,
                         height: MediaQuery.of(context).size.height * 0.2,
                       ),

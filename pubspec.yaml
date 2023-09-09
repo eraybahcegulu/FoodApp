@@ -55,14 +55,9 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/images/menu/salata.png
-    - assets/images/menu/pizza.png
-    - assets/images/menu/makarna.png
-    - assets/images/menu/tatli.png
-    - assets/images/salatalar/akdeniz.png
-    - assets/images/salatalar/sezar.png
-    - assets/images/salatalar/rus.png
-    - assets/images/salatalar/patates.png
+    - assets/images/menu/
+    - assets/images/salatalar/
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
