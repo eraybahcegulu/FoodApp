@@ -5,4 +5,6 @@
 
 ![Screenshot_3](https://github.com/eraybahcegulu/FoodApp/assets/84785201/d0635a27-eb56-4aa6-880c-9044b47d2ed5)
 
+![Screenshot_1](https://github.com/eraybahcegulu/FoodApp/assets/84785201/c01b875a-22c0-492e-be35-9b1403d71d3d)
+
 ![Screenshot_4](https://github.com/eraybahcegulu/FoodApp/assets/84785201/ecd6ecef-3db9-42cc-a19c-d32b07c63b22)
