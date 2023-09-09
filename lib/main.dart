@@ -57,8 +57,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                     children: [
                       Image.asset(
                         'assets/images/menu/salata.png',
-                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
-                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
@@ -82,8 +82,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                     children: [
                       Image.asset(
                         'assets/images/menu/pizza.png',
-                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
-                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
@@ -107,8 +107,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                     children: [
                       Image.asset(
                         'assets/images/menu/makarna.png',
-                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
-                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
@@ -132,8 +132,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                     children: [
                       Image.asset(
                         'assets/images/menu/tatli.png',
-                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
-                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(

@@ -150,7 +150,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   containerWidth = MediaQuery.of(context).size.width * 0.72;
 } else {
 
-  containerWidth = MediaQuery.of(context).size.width * 0.84;
+  containerWidth = MediaQuery.of(context).size.width * 0.81;
 }
 
     double textFontSize;
@@ -177,7 +177,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   recipeTitleFontSize = 16.0;
 } else {
 
-  recipeTitleFontSize = 22.0;
+  recipeTitleFontSize = 25.0;
 }
 
     double personTitleFontSize;
@@ -233,6 +233,15 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
 
   cookingTime = 22.0;
 }
+
+    double iconSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  iconSize = 30.0;
+} else {
+
+  iconSize = 50.0;
+}
     return Scaffold(
       backgroundColor: salatalar[currentSalataIndex].color,
       body: Padding(
@@ -250,6 +259,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                 IconButton(
                   onPressed: changeContainerLeft,
                   icon: Icon(Icons.chevron_left),
+                  iconSize: iconSize,
                 ),
                 Container(
                   
@@ -278,7 +288,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                               children: [
                                 Container(
                                   width: MediaQuery.of(context).size.width * 0.21,
-                                  height: MediaQuery.of(context).size.height * 0.06, // Yükseklik %20
+                                  height: MediaQuery.of(context).size.height * 0.06,
                                   decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black,width: 1.5,),
                                   ),
@@ -298,7 +308,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                 ),
                                 Container(
                                   width: MediaQuery.of(context).size.width * 0.24,
-                                  height: MediaQuery.of(context).size.height * 0.06, // Yükseklik %20
+                                  height: MediaQuery.of(context).size.height * 0.06, 
                                   decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black,width: 1.5,),
                                     
@@ -319,7 +329,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                 ),
                                 Container(
                                   width: MediaQuery.of(context).size.width * 0.21,
-                                  height: MediaQuery.of(context).size.height * 0.06, // Yükseklik %20
+                                  height: MediaQuery.of(context).size.height * 0.06,
                                   decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black,width: 1.5,),
                                   ),
@@ -349,6 +359,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                               style: GoogleFonts.caveat( fontSize: textFontSize, fontWeight: FontWeight.w800),
 
                             ),
+                            SizedBox(height: MediaQuery.of(context).size.height * 0.04,),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(
@@ -377,6 +388,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                   child: IconButton(
                     onPressed: changeContainerRight,
                     icon: Icon(Icons.chevron_right),
+                    iconSize: iconSize, 
                   ),
                 ),
               ],
