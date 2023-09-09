@@ -5,11 +5,28 @@ class RusSalatasi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        double appBarTitleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  appBarTitleFontSize = 18.0;
+} else {
+
+  appBarTitleFontSize = 30.0;
+}
+
+    double textFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  textFontSize = 20.0;
+} else {
+
+  textFontSize = 35.0;
+}
     return Scaffold(
       appBar: AppBar(
-        title: Text('Rus Salatası Tarifi', style: GoogleFonts.caveat( fontSize: 20, fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.green,
-        toolbarHeight: 40.0,
+        title: Text('RUS SALATASI TARİFİ', style: GoogleFonts.caveat( fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold,),),
+        backgroundColor: Colors.red,
+           toolbarHeight: MediaQuery.of(context).size.height * 0.06,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -19,27 +36,34 @@ class RusSalatasi extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Yapılış:',
-                style: GoogleFonts.caveat( fontSize: 20, fontWeight: FontWeight.bold),
+                style: GoogleFonts.caveat( fontSize: textFontSize, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
-              _buildStepText('1. Patatesleri ve havuçları soyun ve iri küpler halinde doğrayın.'),
-              _buildStepText('2. Bir tencerede tuzlu suda patates ve havuçları yumuşayıncaya kadar haşlayın (yaklaşık 15-20 dakika). Daha sonra süzün ve soğumaya bırakın.'),
-              _buildStepText('3. Haşlanmış yumurtaları soyun ve doğrayın.'),
-              _buildStepText('4. Büyük bir kaseye haşlanmış patatesleri, havuçları, tavuk göğsü veya jambonu, haşlanmış yumurtaları, bezelyeyi ve konserve mısırı ekleyin (isteğe bağlı).'),
-              _buildStepText('5. Ayrı bir kapta mayonez ve yoğurdu iyice karıştırın. Bu karışımı sebzelerin üzerine ekleyin.'),
-              _buildStepText('6. Turşu ekleyin (isteğe bağlı) ve tuz ile karabiber ekleyerek tatlandırın.'),
-              _buildStepText('7. Tüm malzemeleri dikkatlice karıştırın, salatanın tüm malzemelerin sosla kaplanmasını sağlayın.'),
-              _buildStepText('8. Rus salatasını buzdolabında en az bir saat dinlendirin. Böylece lezzetler iyice karışır.'),
+              _buildStepText('1. Patatesleri ve havuçları soyun ve iri küpler halinde doğrayın.',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('2. Bir tencerede tuzlu suda patates ve havuçları yumuşayıncaya kadar haşlayın (yaklaşık 15-20 dakika). Daha sonra süzün ve soğumaya bırakın.',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('3. Haşlanmış yumurtaları soyun ve doğrayın.',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('4. Büyük bir kaseye haşlanmış patatesleri, havuçları, tavuk göğsü veya jambonu, haşlanmış yumurtaları, bezelyeyi ve konserve mısırı ekleyin (isteğe bağlı).',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('5. Ayrı bir kapta mayonez ve yoğurdu iyice karıştırın. Bu karışımı sebzelerin üzerine ekleyin.',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('6. Turşu ekleyin (isteğe bağlı) ve tuz ile karabiber ekleyerek tatlandırın.',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('7. Tüm malzemeleri dikkatlice karıştırın, salatanın tüm malzemelerin sosla kaplanmasını sağlayın.',textFontSize),
+              SizedBox(height: 15),
+              _buildStepText('8. Rus salatasını buzdolabında en az bir saat dinlendirin. Böylece lezzetler iyice karışır.',textFontSize),
             ],
           ),
         ),
       ),
-      backgroundColor: Colors.yellow,
+      backgroundColor: Color.fromARGB(255, 248, 246, 143),
     );
   }
 
-  Widget _buildStepText(String text) {
-    return Text(text, style: GoogleFonts.caveat( fontSize: 20, fontWeight: FontWeight.bold),);
+  Widget _buildStepText(String text, textFontSize) {
+    return Text(text, style: GoogleFonts.caveat( fontSize: textFontSize, fontWeight: FontWeight.bold),);
+    
   }
 }
 

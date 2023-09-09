@@ -17,12 +17,27 @@ class MyApp extends StatelessWidget {
 }
 
 class Main extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
+    double titleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  titleFontSize = 30;
+} else {
+
+  titleFontSize = 70;
+}
+
     return MaterialApp(
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: EdgeInsets.fromLTRB(
+         MediaQuery.of(context).size.width * 0.015,
+         MediaQuery.of(context).size.height * 0.015,
+         MediaQuery.of(context).size.width * 0.015,
+         MediaQuery.of(context).size.height * 0.015,
+),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -42,20 +57,20 @@ class Main extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/menu/salata.png',
-                        width: 180,
-                        height: 200,
+                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
+                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
                         'SALATALAR',
                         style: GoogleFonts.caveat(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {},
@@ -67,20 +82,20 @@ class Main extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/menu/pizza.png',
-                        width: 180,
-                        height: 200,
+                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
+                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
                         'PİZZALAR',
                         style: GoogleFonts.caveat(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {},
@@ -92,20 +107,20 @@ class Main extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/menu/makarna.png',
-                        width: 180,
-                        height: 200,
+                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
+                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
                         'MAKARNALAR',
                         style: GoogleFonts.caveat(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {},
@@ -117,14 +132,14 @@ class Main extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/menu/tatli.png',
-                        width: 180,
-                        height: 200,
+                        width: MediaQuery.of(context).size.width * 0.4, // Genişlik %40
+                        height: MediaQuery.of(context).size.height * 0.2, // Yükseklik %20
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
                         'TATLILAR',
                         style: GoogleFonts.caveat(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),

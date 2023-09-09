@@ -12,18 +12,30 @@ void main() {
 class Salata extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
+    double appBarTitleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  appBarTitleFontSize = 18;
+} else {
+
+  appBarTitleFontSize = 30;
+}
     return MaterialApp(
+      
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Salatalar',
-          style: GoogleFonts.caveat( fontSize: 18, fontWeight: FontWeight.bold),),
+          title: Text('SALATALAR',
+          
+          style: GoogleFonts.caveat( fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold),),
                     leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
-           toolbarHeight: 40.0,
+          backgroundColor: Colors.red,
+           toolbarHeight: MediaQuery.of(context).size.height * 0.06,
         ),
         body: ContainerChanger(),
       ),
@@ -126,11 +138,110 @@ class _ContainerChangerState extends State<ContainerChanger> {
     }
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
+
+
+    double containerWidth;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  containerWidth = MediaQuery.of(context).size.width * 0.72;
+} else {
+
+  containerWidth = MediaQuery.of(context).size.width * 0.84;
+}
+
+    double textFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  textFontSize = 18.0;
+} else {
+
+  textFontSize = 26.0;
+}
+
+    double titleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  titleFontSize = 18.0;
+} else {
+
+  titleFontSize = 40.0;
+}
+
+    double recipeTitleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  recipeTitleFontSize = 16.0;
+} else {
+
+  recipeTitleFontSize = 22.0;
+}
+
+    double personTitleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  personTitleFontSize = 11.0;
+} else {
+
+  personTitleFontSize = 22.0;
+}
+
+    double personFontSize;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  personFontSize = 15.0;
+} else {
+
+  personFontSize = 22.0;
+}
+
+    double titlePreparationTime;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  titlePreparationTime = 11.0;
+} else {
+
+  titlePreparationTime = 22.0;
+}
+
+    double preparationTime;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  preparationTime = 15.0;
+} else {
+
+  preparationTime = 22.0;
+}
+
+    double titleCookingTime;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  titleCookingTime = 11.0;
+} else {
+
+  titleCookingTime = 22.0;
+}
+
+    double cookingTime;
+if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  cookingTime = 15.0;
+} else {
+
+  cookingTime = 22.0;
+}
     return Scaffold(
+      backgroundColor: salatalar[currentSalataIndex].color,
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.fromLTRB(
+         MediaQuery.of(context).size.width * 0.02,
+         MediaQuery.of(context).size.height * 0.02,
+         MediaQuery.of(context).size.width * 0.01,
+         MediaQuery.of(context).size.height * 0.01,
+),
         child: Column(
           children: [
             Row(
@@ -141,16 +252,17 @@ class _ContainerChangerState extends State<ContainerChanger> {
                   icon: Icon(Icons.chevron_left),
                 ),
                 Container(
+                  
                   color: salatalar[currentSalataIndex].color,
-                  width: 300,
-                  height: 599,
+                  width: containerWidth,
+                  height: MediaQuery.of(context).size.height * 0.87,
                   child: Center(
                     child: Column(
                       children: [
                         GestureDetector(
                           child: Image(
                             image: salatalar[currentSalataIndex].image,
-
+                              width: MediaQuery.of(context).size.width * 0.6,
                           ),
                         ),
                         Column(
@@ -158,71 +270,69 @@ class _ContainerChangerState extends State<ContainerChanger> {
                           children: [
                             Text(
                               salatalar[currentSalataIndex].title,
-                              style: GoogleFonts.caveat( fontSize: 18, fontWeight: FontWeight.bold),
+                              style: GoogleFonts.caveat( fontSize: titleFontSize, fontWeight: FontWeight.w900),
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Container(
-                                  width: 95,
-                                  height:
-                                      35,
+                                  width: MediaQuery.of(context).size.width * 0.21,
+                                  height: MediaQuery.of(context).size.height * 0.06, // Yükseklik %20
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black),
+                                    border: Border.all(color: Colors.black,width: 1.5,),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'KAÇ KİŞİLİK',
-                                        style: GoogleFonts.caveat( fontSize: 11, fontWeight: FontWeight.w900),
+                                        style: GoogleFonts.caveat( fontSize: personTitleFontSize, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
                                         salatalar[currentSalataIndex].person,
-                                        style: GoogleFonts.caveat( fontSize: 15, fontWeight: FontWeight.w600),
+                                        style: GoogleFonts.caveat( fontSize: personFontSize, fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  width: 95,
-                                  height:
-                                      35,
+                                  width: MediaQuery.of(context).size.width * 0.24,
+                                  height: MediaQuery.of(context).size.height * 0.06, // Yükseklik %20
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black),
+                                    border: Border.all(color: Colors.black,width: 1.5,),
+                                    
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'HAZIRLAMA SÜRESİ',
-                                        style: GoogleFonts.caveat( fontSize: 11, fontWeight: FontWeight.w900),
+                                        style: GoogleFonts.caveat( fontSize: titlePreparationTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
                                         salatalar[currentSalataIndex].preparationTime,
-                                        style: GoogleFonts.caveat( fontSize: 15, fontWeight: FontWeight.w600),
+                                        style: GoogleFonts.caveat( fontSize: preparationTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  width: 95,
-                                  height:
-                                      35,
+                                  width: MediaQuery.of(context).size.width * 0.21,
+                                  height: MediaQuery.of(context).size.height * 0.06, // Yükseklik %20
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black),
+                                    border: Border.all(color: Colors.black,width: 1.5,),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'PİŞİRME SÜRESİ',
-                                        style: GoogleFonts.caveat( fontSize: 11, fontWeight: FontWeight.w900),
+                                        style: GoogleFonts.caveat( fontSize: titleCookingTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
                                         salatalar[currentSalataIndex].cookingTime,
-                                        style: GoogleFonts.caveat( fontSize: 15, fontWeight: FontWeight.w600),
+                                        style: GoogleFonts.caveat( fontSize: cookingTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
@@ -231,15 +341,14 @@ class _ContainerChangerState extends State<ContainerChanger> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 5),
+                        SizedBox(height: MediaQuery.of(context).size.height * 0.005,),
                         Column(
                           children: [
                             Text(
                               salatalar[currentSalataIndex].text,
-                              style: GoogleFonts.caveat( fontSize: 18, fontWeight: FontWeight.w800),
+                              style: GoogleFonts.caveat( fontSize: textFontSize, fontWeight: FontWeight.w800),
 
                             ),
-                            SizedBox(height: 0),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(
@@ -247,7 +356,7 @@ class _ContainerChangerState extends State<ContainerChanger> {
                                     .recipeButtonColor,
                                 onPrimary: Colors.white,
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 20 ),
+                                    horizontal: MediaQuery.of(context).size.height * 0.03 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -255,7 +364,7 @@ class _ContainerChangerState extends State<ContainerChanger> {
                               ),
                               child: Text(
                                 salatalar[currentSalataIndex].recipeTitle,
-                                style: GoogleFonts.caveat( fontSize: 16, fontWeight: FontWeight.w500),
+                                style: GoogleFonts.caveat( fontSize: recipeTitleFontSize, fontWeight: FontWeight.w500),
                               ),
                             ),
                           ],
