@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:foodapp/views/salads/AkdenizSalatasi.dart';
-import 'package:foodapp/views/salads/KerevizSalatasi.dart';
-import 'package:foodapp/views/salads/RusSalatasi.dart';
-import 'package:foodapp/views/salads/PatatesSalatasi.dart';
-import 'package:foodapp/views/salads/SezarSalatasi.dart';
-import 'package:foodapp/views/salads/MakarnaSalatasi.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:foodapp/views/pizzas/MargaritaPizza.dart';
+import 'package:foodapp/views/pizzas/HavaiiPizza.dart';
+import 'package:foodapp/views/pizzas/Pepperoni.dart';
 void main() {
-  runApp(Salata());
+  runApp(Pizza());
 }
 
-class Salata extends StatelessWidget {
+class Pizza extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
@@ -27,7 +23,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
       
       home: Scaffold(
         appBar: AppBar(
-          title: Text('SALATALAR',
+          title: Text('PİZZALAR',
           
           style: GoogleFonts.caveat( fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold),),
                     leading: IconButton(
@@ -51,95 +47,57 @@ class ContainerChanger extends StatefulWidget {
 }
 
 class _ContainerChangerState extends State<ContainerChanger> {
-  List<SalataData> salatalar = [
-    SalataData(
-      color: Colors.red,
-      recipeButtonColor: const Color.fromARGB(255, 143, 54, 244),
-      image: AssetImage('assets/images/salads/akdeniz.png'),
-      title: 'AKDENİZ SALATASI',
+  List<PizzaData> pizzalar = [
+    PizzaData(
+      color: Color.fromARGB(255, 82, 120, 143),
+      recipeButtonColor: Color.fromARGB(255, 90, 211, 150),
+      image: AssetImage('assets/images/pizzas/margarita.png'),
+      title: 'MARGARİTA PİZZA',
       text:
-          'Malzemeler:\n• 2 büyük domates\n• 1 salatalık\n• 1 yeşil biber\n• 1 kırmızı biber\n• 1 soğan\n• 1/2 su bardağı siyah zeytin (çekirdekleri çıkarılmış)\n• 1/2 su bardağı yeşil zeytin (çekirdekleri çıkarılmış)\n• 200 gram beyaz peynir veya lor peyniri\n• Taze roka veya taze nane yaprakları (isteğe bağlı)\n• 1/4 su bardağı zeytinyağı\n• 2 yemek kaşığı limon suyu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş\n• Tuz ve karabiber (damak zevkinize göre))',
+          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz ve karabiber\n• 1/2 su bardağı domates sosu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş)\n• 1 çay kaşığı kurutulmuş kekik\n• 1.5 su bardağı rendelenmiş mozzarella peyniri\n• Taze fesleğen yaprakları (isteğe bağlı)',
       recipeTitle: 'Tarife Bak',
       person: '4',
-      preparationTime: '15-20 dakika',
-      coolingTime: 'yok',
+      preparationTime: '80 dakika',
+      cookingTime: '15-20 dakika',
     ),
-    SalataData(
-      color: const Color.fromARGB(255, 61, 204, 137),
-      recipeButtonColor: Colors.red,
-      image: AssetImage('assets/images/salads/patates.png'),
-      title: 'PATATES SALATASI',
+    PizzaData(
+      color: Color.fromRGBO(219, 121, 121, 1),
+      recipeButtonColor: Color.fromARGB(255, 201, 50, 193),
+      image: AssetImage('assets/images/pizzas/havaii.png'),
+      title: 'HAVAİİ PİZZA',
       text:
-          'Malzemeler:\n• 4 büyük patates\n• 3 yumurta (haşlanmış ve doğranmış)\n• 1/2 su bardağı mayonez\n• 2 yemek kaşığı yoğurt (isteğe bağlı)\n• 1 yemek kaşığı hardal (isteğe bağlı)\n• 2 çay kaşığı sirke veya limon suyu\n• 1/2 çay kaşığı tuz (veya damak zevkinize göre)\n• 1/4 çay kaşığı karabiber\n• 1/4 su bardağı doğranmış taze soğan (isteğe bağlı)\n •1/4 su bardağı doğranmış taze dereotu veya maydanoz (isteğe bağlı)',
+          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz\n• 1/2 su bardağı domates sosu\n• 1/4 su bardağı barbekü sos\n• 1/4 su bardağı rendelenmiş mozzarella peyniri\n• 150 gram dilimlenmiş jambon veya hindi jambonu\n• 1/2 su bardağı döner parçaları (isteğe bağlı)\n• 1/2 su bardağı dilimlenmiş ananas (konserve veya taze)\n• 1/4 su bardağı dilimlenmiş siyah zeytin (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş yeşil biber (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş turşu biber (isteğe bağlı)',
       recipeTitle: 'Tarife Bak',
-      person: '4-6',
-      preparationTime: '30 dakika',
-      coolingTime: '60 dakika',
-    ),
-    SalataData(
-      color: const Color.fromARGB(255, 178, 77, 196),
-      recipeButtonColor: Color.fromARGB(255, 37, 187, 94),
-      image: AssetImage('assets/images/salads/rus.png'),
-      title: 'RUS SALATASI',
-      text:
-          'Malzemeler:\n• 4 büyük haşlanmış patates\n• 3 büyük haşlanmış havuç\n• 200 gram haşlanmış yeşil bezelye (konserve veya taze)\n• 200 gram haşlanmış döner parçaları (isteğe bağlı, tavuk veya hindi de kullanabilirsiniz)\n• 4 haşlanmış yumurta\n• 1/2 su bardağı haşlanmış mısır (konserve veya taze\n• 1/2 su bardağı mayonez\n• 1/4 su bardağı yoğurt (isteğe bağlı)\n• 2-3 yemek kaşığı hardal (isteğe bağlı)\n• Tuz ve karabiber (damak zevkinize göre)\n• 1/2 su bardağı doğranmış taze soğan (isteğe bağlı)\n• Taze dereotu veya maydanoz yaprakları (süslemek için)',
-      recipeTitle: 'Tarife Bak',
-      person: '4-6',
-      preparationTime: '30 dakika',
-      coolingTime: '60 dakika',
-    ),
-    SalataData(
-      color: Colors.blue,
-      recipeButtonColor: Color.fromARGB(255, 180, 65, 12),
-      image: AssetImage('assets/images/salads/sezar.png'),
-      title: 'SEZAR SALATASI',
-      text:
-          'Malzemeler:\n• 2 adet kıvırcık marul\n• 1/2 su bardağı rendelenmiş parmesan peyniri\n• 1 su bardağı çıtır ekmek kırıntıları veya krutonlar (isteğe bağlı)\n• 2 büyük tavuk göğsü\n• 2 yemek kaşığı zeytinyağı\n• Tuz ve karabiber\n• 1/2 su bardağı mayonez\n• 1/4 su bardağı rendelenmiş parmesan peyniri\n• 2 diş sarımsak (isteğe bağlı, rendelenmiş veya dövülmüş)\n• 2 yemek kaşığı limon suyu\n• 1 yemek kaşığı dijon hardalı\n• 1 yemek kaşığı Worcestershire sosu',
-      recipeTitle: 'Tarife Bak',
-      person: '2',
-      preparationTime: '30 dakika',
-      coolingTime: 'yok',
+      person: '4',
+      preparationTime: '80 dakika',
+      cookingTime: '15-20 dakika',
     ),
 
-    SalataData(
-      color: Color.fromARGB(255, 173, 87, 120),
-      recipeButtonColor: Color.fromARGB(255, 109, 126, 182),
-      image: AssetImage('assets/images/salads/makarna.png'),
-      title: 'MAKARNA SALATASI',
+        PizzaData(
+      color: Color.fromARGB(255, 129, 184, 67),
+      recipeButtonColor: Color.fromARGB(255, 120, 154, 192),
+      image: AssetImage('assets/images/pizzas/pepperoni.png'),
+      title: 'PEPPERONİ PİZZA',
       text:
-          'Malzemeler:\n• 2 su bardağı makarna (istediğiniz türde)\n• 1 su bardağı haşlanmış mısır (konserve veya taze)\n• 1/2 su bardağı doğranmış salatalık\n• 1/2 su bardağı doğranmış domates\n• 1/4 su bardağı doğranmış yeşil biber\n• 1/4 su bardağı doğranmış kırmızı biber\n• 1/4 su bardağı doğranmış mor soğan (isteğe bağlı)\n• 1/4 su bardağı doğranmış taze maydanoz veya taze dereotu (isteğe bağlı)\n• 1/2 su bardağı mayonez\n• 2 yemek kaşığı yoğurt (isteğe bağlı)\n• 2 yemek kaşığı sızma zeytinyağı\n• 2 yemek kaşığı beyaz sirke veya limon suyu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş veya ezilmiş\n• Tuz ve karabiber (damak zevkinize göre))',
+          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz\n• 1 su bardağı domates sosu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş)\n• 1 çay kaşığı kurutulmuş kekik\n• 1 çay kaşığı kurutulmuş fesleğen\n• Tuz ve karabiber (damak zevkinize göre)\n• 1.5 su bardağı rendelenmiş mozzarella peyniri\n• 100-150 gram dilimlenmiş pepperoni sosis\n•1/2 su bardağı dilimlenmiş siyah zeytin (isteğe bağlı)\n• 1/2 su bardağı dilimlenmiş yeşil biber (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş turşu biber (isteğe bağlı)',
       recipeTitle: 'Tarife Bak',
-      person: '4-6',
-      preparationTime: '15-20 dakika',
-      coolingTime: '60 dakika',
+      person: '4',
+      preparationTime: '80 dakika',
+      cookingTime: '15-20 dakika',
     ),
-
-        SalataData(
-      color: Color.fromARGB(255, 57, 173, 102),
-      recipeButtonColor: Color.fromARGB(255, 93, 119, 231),
-      image: AssetImage('assets/images/salads/kereviz.png'),
-      title: 'KEREVİZ SALATASI',
-      text:
-          'Malzemeler:\n• 3 büyük kereviz (kabuklarını soyun ve doğrayın)\n• 1/2 su bardağı mayonez\n• 1 yemek kaşığı yoğurt (isteğe bağlı)\n• 1 yemek kaşığı limon suyu\n• 1 çay bardağı ceviz içi (isteğe bağlı, iri doğranmış)\n• 1/2 su bardağı ceviz içi (kabuklarından arındırılmış ve iri doğranmış)\n• Tuz ve karabiber (damak zevkinize göre)\n• Taze dereotu veya maydanoz yaprakları (süslemek için)',
-      recipeTitle: 'Tarife Bak',
-      person: '4-6',
-      preparationTime: '15-20 dakika',
-      coolingTime: 'yok',
-    ),
-    
   ];
 
   int currentSalataIndex = 0;
 
   void changeContainerLeft() {
     setState(() {
-      currentSalataIndex = (currentSalataIndex - 1) % salatalar.length;
+      currentSalataIndex = (currentSalataIndex - 1) % pizzalar.length;
     });
   }
 
   void changeContainerRight() {
     setState(() {
-      currentSalataIndex = (currentSalataIndex + 1) % salatalar.length;
+      currentSalataIndex = (currentSalataIndex + 1) % pizzalar.length;
     });
   }
 
@@ -147,34 +105,20 @@ class _ContainerChangerState extends State<ContainerChanger> {
     if (currentSalataIndex == 0) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => AkdenizSalatasi()),
+        MaterialPageRoute(builder: (context) => MargaritaPizza()),
       );
-    } else if (currentSalataIndex == 1 || currentSalataIndex == -5) {
+    } else if (currentSalataIndex == 1 || currentSalataIndex == -2) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => PatatesSalatasi()),
+        MaterialPageRoute(builder: (context) => HavaiiPizza()),
       );
-    } else if (currentSalataIndex == 2 || currentSalataIndex == -4) {
+    } else if (currentSalataIndex == 2 || currentSalataIndex == -1) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => RusSalatasi()),
+        MaterialPageRoute(builder: (context) => HavaiiPizza()),
       );
-    } else if (currentSalataIndex == 3 || currentSalataIndex == -3) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => SezarSalatasi()),
-      );
-    } else if (currentSalataIndex == 4 || currentSalataIndex == -2) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => MakarnaSalatasi()),
-      );
-    } else if (currentSalataIndex == 5 || currentSalataIndex == -1) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => KerevizSalatasi()),
-      );
-    }
+    } 
+    
   }
 
   
@@ -255,22 +199,22 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   preparationTime = 22.0;
 }
 
-    double titleCoolingTime;
+    double titleCookingTime;
 if (MediaQuery.of(context).size.shortestSide < 600) {
   
-  titleCoolingTime = 11.0;
+  titleCookingTime = 11.0;
 } else {
 
-  titleCoolingTime = 22.0;
+  titleCookingTime = 22.0;
 }
 
-    double coolingTime;
+    double cookingTime;
 if (MediaQuery.of(context).size.shortestSide < 600) {
   
-  coolingTime = 15.0;
+  cookingTime = 15.0;
 } else {
 
-  coolingTime = 22.0;
+  cookingTime = 22.0;
 }
 
     double iconSize;
@@ -282,7 +226,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   iconSize = 50.0;
 }
     return Scaffold(
-      backgroundColor: salatalar[currentSalataIndex].color,
+      backgroundColor: pizzalar[currentSalataIndex].color,
       body: Padding(
         padding: EdgeInsets.fromLTRB(
          MediaQuery.of(context).size.width * 0.02,
@@ -302,7 +246,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                 ),
                 Container(
                   
-                  color: salatalar[currentSalataIndex].color,
+                  color: pizzalar[currentSalataIndex].color,
                   width: containerWidth,
                   height: MediaQuery.of(context).size.height * 0.87,
                   child: Center(
@@ -310,7 +254,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       children: [
                         GestureDetector(
                           child: Image(
-                            image: salatalar[currentSalataIndex].image,
+                            image: pizzalar[currentSalataIndex].image,
                               width: MediaQuery.of(context).size.width * 0.6,
                           ),
                         ),
@@ -318,7 +262,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              salatalar[currentSalataIndex].title,
+                              pizzalar[currentSalataIndex].title,
                               style: GoogleFonts.caveat( fontSize: titleFontSize, fontWeight: FontWeight.w900),
                             ),
                             SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
@@ -339,7 +283,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: personTitleFontSize, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        salatalar[currentSalataIndex].person,
+                                        pizzalar[currentSalataIndex].person,
                                         style: GoogleFonts.caveat( fontSize: personFontSize, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -360,7 +304,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: titlePreparationTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        salatalar[currentSalataIndex].preparationTime,
+                                        pizzalar[currentSalataIndex].preparationTime,
                                         style: GoogleFonts.caveat( fontSize: preparationTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -376,12 +320,12 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'SOĞUTMA SÜRESİ',
-                                        style: GoogleFonts.caveat( fontSize: titleCoolingTime, fontWeight: FontWeight.w900),
+                                        'PİŞİRME SÜRESİ',
+                                        style: GoogleFonts.caveat( fontSize: titleCookingTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        salatalar[currentSalataIndex].coolingTime,
-                                        style: GoogleFonts.caveat( fontSize: coolingTime, fontWeight: FontWeight.w600),
+                                        pizzalar[currentSalataIndex].cookingTime,
+                                        style: GoogleFonts.caveat( fontSize: cookingTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
@@ -394,14 +338,14 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                         Column(
                           children: [
                             Text(
-                              salatalar[currentSalataIndex].text,
+                              pizzalar[currentSalataIndex].text,
                               style: GoogleFonts.caveat( fontSize: textFontSize, fontWeight: FontWeight.w800),
 
                             ),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(
-                                primary: salatalar[currentSalataIndex]
+                                primary: pizzalar[currentSalataIndex]
                                     .recipeButtonColor,
                                 onPrimary: Colors.white,
                                 padding: EdgeInsets.symmetric(
@@ -412,7 +356,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                 elevation: 3,
                               ),
                               child: Text(
-                                salatalar[currentSalataIndex].recipeTitle,
+                                pizzalar[currentSalataIndex].recipeTitle,
                                 style: GoogleFonts.caveat( fontSize: recipeTitleFontSize, fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -438,7 +382,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   }
 }
 
-class SalataData {
+class PizzaData {
   final Color color;
   final Color recipeButtonColor;
   final AssetImage image;
@@ -447,9 +391,9 @@ class SalataData {
   final String recipeTitle;
   final String person;
   final String preparationTime;
-  final String coolingTime;
+  final String cookingTime;
 
-  SalataData({
+  PizzaData({
     required this.color,
     required this.recipeButtonColor,
     required this.image,
@@ -458,6 +402,6 @@ class SalataData {
     required this.recipeTitle,
     required this.person,
     required this.preparationTime,
-    required this.coolingTime,
+    required this.cookingTime,
   });
 }

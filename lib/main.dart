@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/views/salata.dart';
+import 'package:foodapp/views/pizza.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,7 +74,12 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
               SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                                        Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Pizza()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.red,
                     onPrimary: Colors.white,
