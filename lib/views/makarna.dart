@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:foodapp/views/pizzalar/margarita.dart';
-import 'package:foodapp/views/pizzalar/havaii.dart';
-import 'package:foodapp/views/pizzalar/pepperoni.dart';
+import 'package:foodapp/views/makarnalar/kori_eriste.dart';
+import 'package:foodapp/views/makarnalar/lazanya.dart';
+import 'package:foodapp/views/makarnalar/spagetti.dart';
 void main() {
-  runApp(Pizza());
+  runApp(Makarna());
 }
 
-class Pizza extends StatelessWidget {
+class Makarna extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
@@ -23,7 +23,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
       
       home: Scaffold(
         appBar: AppBar(
-          title: Text('PİZZALAR',
+          title: Text('MAKARNALAR',
           
           style: GoogleFonts.caveat( fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold),),
                     leading: IconButton(
@@ -47,42 +47,42 @@ class ContainerChanger extends StatefulWidget {
 }
 
 class _ContainerChangerState extends State<ContainerChanger> {
-  List<PizzaData> pizzalar = [
-    PizzaData(
-      color: Color.fromARGB(255, 82, 120, 143),
-      recipeButtonColor: Color.fromARGB(255, 90, 211, 150),
-      image: AssetImage('assets/images/pizzalar/margarita_pizza.png'),
-      title: 'MARGARİTA PİZZA',
+  List<MakarnaData> makarnalar = [
+    MakarnaData(
+      color: Color.fromARGB(255, 34, 53, 141),
+      recipeButtonColor: Color.fromARGB(255, 145, 168, 102),
+      image: AssetImage('assets/images/makarnalar/spagetti.png'),
+      title: 'SPAGETTİ',
       text:
-          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz ve karabiber\n• 1/2 su bardağı domates sosu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş)\n• 1 çay kaşığı kurutulmuş kekik\n• 1.5 su bardağı rendelenmiş mozzarella peyniri\n• Taze fesleğen yaprakları (isteğe bağlı)',
+          'Malzemeler:\n• 250 gram spagetti makarna\n• 2 yemek kaşığı zeytinyağı\n• 3-4 diş sarımsak (ince dilimlenmiş veya ezilmiş)\n• 1/4 çay bardağı taze doğranmış maydanoz\n• Tuz\n• Karabiber\n• 1/4 su bardağı rendelenmiş parmesan peyniri (isteğe bağlı)\n• Kırmızı biber pul biber (isteğe bağlı)',
       recipeTitle: 'Tarife Bak',
-      person: '4',
-      preparationTime: '80 dakika',
-      cookingTime: '15-20 dakika',
+      person: '2',
+      preparationTime: '15 dakika',
+      cookingTime: '10 dakika',
     ),
-    PizzaData(
-      color: Color.fromRGBO(219, 121, 121, 1),
-      recipeButtonColor: Color.fromARGB(255, 201, 50, 193),
-      image: AssetImage('assets/images/pizzalar/havaii_pizza.png'),
-      title: 'HAVAİİ PİZZA',
+    MakarnaData(
+      color: Color.fromRGBO(170, 36, 163, 1),
+      recipeButtonColor: Color.fromARGB(255, 168, 87, 55),
+      image: AssetImage('assets/images/makarnalar/lazanya.png'),
+      title: 'LAZANYA',
       text:
-          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz\n• 1/2 su bardağı domates sosu\n• 1/4 su bardağı barbekü sos\n• 1/4 su bardağı rendelenmiş mozzarella peyniri\n• 150 gram dilimlenmiş jambon veya hindi jambonu\n• 1/2 su bardağı döner parçaları (isteğe bağlı)\n• 1/2 su bardağı dilimlenmiş ananas (konserve veya taze)\n• 1/4 su bardağı dilimlenmiş siyah zeytin (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş yeşil biber (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş turşu biber (isteğe bağlı)',
+          'Malzemeler:\n• 2 yemek kaşığı tereyağı veya margarin\n• 2 yemek kaşığı un\n• 2 su bardağı süt\n• Muskat rendesi (isteğe bağlı)\n• 2 yemek kaşığı zeytinyağı\n• 1 soğan (ince doğranmış)\n• 2 diş sarımsak (ince doğranmış veya ezilmiş)\n• 400 gram kıyma (dana veya dana-dana karışımı)\n• 1 su bardağı domates sosu\n• 1 su bardağı domates püresi\n• 1 tatlı kaşığı kuru kekik\n• 1 tatlı kaşığı tuz ve karabiber\n• 250 gram lazanya makarnası\n• 2 su bardağı rendelenmiş mozzarella peyniri\n• 1 su bardağı rendelenmiş parmesan peyniri',
       recipeTitle: 'Tarife Bak',
-      person: '4',
-      preparationTime: '80 dakika',
-      cookingTime: '15-20 dakika',
+      person: '4-6',
+      preparationTime: '40 dakika',
+      cookingTime: '30-35 dakika',
     ),
 
-        PizzaData(
-      color: Color.fromARGB(255, 129, 184, 67),
-      recipeButtonColor: Color.fromARGB(255, 120, 154, 192),
-      image: AssetImage('assets/images/pizzalar/pepperoni_pizza.png'),
-      title: 'PEPPERONİ PİZZA',
+        MakarnaData(
+      color: Color.fromARGB(255, 94, 206, 178),
+      recipeButtonColor: Color.fromARGB(255, 147, 8, 228),
+      image: AssetImage('assets/images/makarnalar/kori_soslu_eriste.png'),
+      title: 'KÖRİ SOSLU ERİŞTE',
       text:
-          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz\n• 1 su bardağı domates sosu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş)\n• 1 çay kaşığı kurutulmuş kekik\n• 1 çay kaşığı kurutulmuş fesleğen\n• Tuz ve karabiber (damak zevkinize göre)\n• 1.5 su bardağı rendelenmiş mozzarella peyniri\n• 100-150 gram dilimlenmiş pepperoni sosis\n•1/2 su bardağı dilimlenmiş siyah zeytin (isteğe bağlı)\n• 1/2 su bardağı dilimlenmiş yeşil biber (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş turşu biber (isteğe bağlı)',
+          'Malzemeler:\n• 250 gram erişte makarnası\n• 2 yemek kaşığı tereyağı veya zeytinyağı\n• 1 büyük soğan (ince doğranmış)\n• 2 diş sarımsak (ince doğranmış veya ezilmiş)\n• 2 yemek kaşığı köri tozu\n• 1 su bardağı krema\n• 1/2 su bardağı tavuk suyu veya sebze suyu\n• Tuz ve karabiber\n• İsteğe bağlı olarak taze kişniş veya taze fesleğen yaprakları (süslemek için)',
       recipeTitle: 'Tarife Bak',
-      person: '4',
-      preparationTime: '80 dakika',
+      person: '2',
+      preparationTime: '10-15 dakika',
       cookingTime: '15-20 dakika',
     ),
   ];
@@ -91,13 +91,13 @@ class _ContainerChangerState extends State<ContainerChanger> {
 
   void changeContainerLeft() {
     setState(() {
-      currentIndex = (currentIndex - 1) % pizzalar.length;
+      currentIndex = (currentIndex - 1) % makarnalar.length;
     });
   }
 
   void changeContainerRight() {
     setState(() {
-      currentIndex = (currentIndex + 1) % pizzalar.length;
+      currentIndex = (currentIndex + 1) % makarnalar.length;
     });
   }
 
@@ -105,17 +105,17 @@ class _ContainerChangerState extends State<ContainerChanger> {
     if (currentIndex == 0) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => MargaritaPizza()),
+        MaterialPageRoute(builder: (context) => Spagetti()),
       );
     } else if (currentIndex == 1 || currentIndex == -2) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HavaiiPizza()),
+        MaterialPageRoute(builder: (context) => Lazanya()),
       );
     } else if (currentIndex == 2 || currentIndex == -1) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HavaiiPizza()),
+        MaterialPageRoute(builder: (context) => KoriEriste()),
       );
     } 
     
@@ -226,7 +226,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   iconSize = 50.0;
 }
     return Scaffold(
-      backgroundColor: pizzalar[currentIndex].color,
+      backgroundColor: makarnalar[currentIndex].color,
       body: Padding(
         padding: EdgeInsets.fromLTRB(
          MediaQuery.of(context).size.width * 0.02,
@@ -246,7 +246,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                 ),
                 Container(
                   
-                  color: pizzalar[currentIndex].color,
+                  color: makarnalar[currentIndex].color,
                   width: containerWidth,
                   height: MediaQuery.of(context).size.height * 0.87,
                   child: Center(
@@ -254,7 +254,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       children: [
                         GestureDetector(
                           child: Image(
-                            image: pizzalar[currentIndex].image,
+                            image: makarnalar[currentIndex].image,
                               width: MediaQuery.of(context).size.width * 0.6,
                           ),
                         ),
@@ -262,7 +262,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              pizzalar[currentIndex].title,
+                              makarnalar[currentIndex].title,
                               style: GoogleFonts.caveat( fontSize: titleFontSize, fontWeight: FontWeight.w900),
                             ),
                             SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
@@ -283,7 +283,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: personTitleFontSize, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        pizzalar[currentIndex].person,
+                                        makarnalar[currentIndex].person,
                                         style: GoogleFonts.caveat( fontSize: personFontSize, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -304,7 +304,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: titlePreparationTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        pizzalar[currentIndex].preparationTime,
+                                        makarnalar[currentIndex].preparationTime,
                                         style: GoogleFonts.caveat( fontSize: preparationTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -324,7 +324,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: titleCookingTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        pizzalar[currentIndex].cookingTime,
+                                        makarnalar[currentIndex].cookingTime,
                                         style: GoogleFonts.caveat( fontSize: cookingTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -338,14 +338,14 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                         Column(
                           children: [
                             Text(
-                              pizzalar[currentIndex].text,
+                              makarnalar[currentIndex].text,
                               style: GoogleFonts.cormorantInfant( fontSize: textFontSize, fontWeight: FontWeight.w900),
 
                             ),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(
-                                primary: pizzalar[currentIndex]
+                                primary: makarnalar[currentIndex]
                                     .recipeButtonColor,
                                 onPrimary: Colors.white,
                                 padding: EdgeInsets.symmetric(
@@ -356,7 +356,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                 elevation: 3,
                               ),
                               child: Text(
-                                pizzalar[currentIndex].recipeTitle,
+                                makarnalar[currentIndex].recipeTitle,
                                 style: GoogleFonts.caveat( fontSize: recipeTitleFontSize, fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -382,7 +382,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   }
 }
 
-class PizzaData {
+class MakarnaData {
   final Color color;
   final Color recipeButtonColor;
   final AssetImage image;
@@ -393,7 +393,7 @@ class PizzaData {
   final String preparationTime;
   final String cookingTime;
 
-  PizzaData({
+  MakarnaData({
     required this.color,
     required this.recipeButtonColor,
     required this.image,

@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/views/salata.dart';
 import 'package:foodapp/views/pizza.dart';
+import 'package:foodapp/views/makarna.dart';
+import 'package:foodapp/views/tatli.dart';
+import 'package:foodapp/views/iletisim.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_database/firebase_database.dart';
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(MyApp());
 }
+
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -22,23 +31,22 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  titleFontSize = 30;
-} else {
-
-  titleFontSize = 70;
-}
+    if (MediaQuery.of(context).size.shortestSide < 600) {
+      titleFontSize = 30;
+    } else {
+      titleFontSize = 70;
+    }
 
     return MaterialApp(
+      
       home: Scaffold(
         body: Padding(
           padding: EdgeInsets.fromLTRB(
-         MediaQuery.of(context).size.width * 0.015,
-         MediaQuery.of(context).size.height * 0.015,
-         MediaQuery.of(context).size.width * 0.015,
-         MediaQuery.of(context).size.height * 0.015,
-),
+            MediaQuery.of(context).size.width * 0.015,
+            MediaQuery.of(context).size.height * 0.015,
+            MediaQuery.of(context).size.width * 0.015,
+            MediaQuery.of(context).size.height * 0.015,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -65,7 +73,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       Text(
                         'SALATALAR',
                         style: GoogleFonts.caveat(
-                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
@@ -75,7 +84,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                                        Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Pizza()),
                     );
@@ -95,7 +104,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       Text(
                         'PİZZALAR',
                         style: GoogleFonts.caveat(
-                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
@@ -104,7 +114,12 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
               SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Makarna()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.red,
                     onPrimary: Colors.white,
@@ -120,7 +135,8 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       Text(
                         'MAKARNALAR',
                         style: GoogleFonts.caveat(
-                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
@@ -129,7 +145,12 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
               SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Tatli()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.red,
                     onPrimary: Colors.white,
@@ -145,7 +166,37 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       Text(
                         'TATLILAR',
                         style: GoogleFonts.caveat(
-                            fontSize: titleFontSize, fontWeight: FontWeight.w500),
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Iletisim()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 97, 97, 85),
+                    onPrimary: Colors.white,
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.1),
+                      IconButton(
+                        onPressed: () {},
+                       icon: FaIcon(FontAwesomeIcons.plus)),
+                      Text(
+                        'İSTEDİĞİNİ EKLE',
+                        style: GoogleFonts.caveat(
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),

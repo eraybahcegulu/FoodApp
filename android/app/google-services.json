@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "157223722652",
+    "firebase_url": "https://foodappnotes-default-rtdb.firebaseio.com",
     "project_id": "foodappnotes",
     "storage_bucket": "foodappnotes.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "157223722652-r2k8ualeaji6k5gq36djj5cu7qcob416.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "157223722652-iq26ctfritt9t2q5r1spl9s1v1h45k1d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodapp"
+              }
             }
           ]
         }

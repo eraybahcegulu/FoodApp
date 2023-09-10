@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:foodapp/views/pizzalar/margarita.dart';
-import 'package:foodapp/views/pizzalar/havaii.dart';
-import 'package:foodapp/views/pizzalar/pepperoni.dart';
+import 'package:foodapp/views/tatlilar/kibris.dart';
+import 'package:foodapp/views/tatlilar/sutlac.dart';
+import 'package:foodapp/views/tatlilar/trilece.dart';
 void main() {
-  runApp(Pizza());
+  runApp(Tatli());
 }
 
-class Pizza extends StatelessWidget {
+class Tatli extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
@@ -23,7 +23,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
       
       home: Scaffold(
         appBar: AppBar(
-          title: Text('PİZZALAR',
+          title: Text('TATLILAR',
           
           style: GoogleFonts.caveat( fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold),),
                     leading: IconButton(
@@ -47,43 +47,43 @@ class ContainerChanger extends StatefulWidget {
 }
 
 class _ContainerChangerState extends State<ContainerChanger> {
-  List<PizzaData> pizzalar = [
-    PizzaData(
-      color: Color.fromARGB(255, 82, 120, 143),
-      recipeButtonColor: Color.fromARGB(255, 90, 211, 150),
-      image: AssetImage('assets/images/pizzalar/margarita_pizza.png'),
-      title: 'MARGARİTA PİZZA',
+  List<TatliData> tatlilar = [
+    TatliData(
+      color: Color.fromARGB(255, 230, 179, 84),
+      recipeButtonColor: Color.fromARGB(255, 167, 74, 86),
+      image: AssetImage('assets/images/tatlilar/sutlac.png'),
+      title: 'SÜTLAÇ',
       text:
-          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz ve karabiber\n• 1/2 su bardağı domates sosu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş)\n• 1 çay kaşığı kurutulmuş kekik\n• 1.5 su bardağı rendelenmiş mozzarella peyniri\n• Taze fesleğen yaprakları (isteğe bağlı)',
+          'Malzemeler:\n• 1/2 su bardağı sütlaç pirinci\n• 1 litre tam yağlı süt\n• 1 su bardağı toz şeker (isteğe bağlı olarak şeker miktarını artırabilir veya azaltabilirsiniz)\n• 2 yemek kaşığı pirinç unu (veya buğday nişastası)\n• 1 vanilya çubuğu veya 1 tatlı kaşığı vanilya özütü\n• Yarım su bardağı su\n• Taze çekilmiş tarçın veya toz tarçın (süslemek için)',
       recipeTitle: 'Tarife Bak',
-      person: '4',
-      preparationTime: '80 dakika',
-      cookingTime: '15-20 dakika',
+      person: '4-6',
+      preparationTime: '30-40 dakika',
+      coolingTime: '2-3 saat',
     ),
-    PizzaData(
-      color: Color.fromRGBO(219, 121, 121, 1),
-      recipeButtonColor: Color.fromARGB(255, 201, 50, 193),
-      image: AssetImage('assets/images/pizzalar/havaii_pizza.png'),
-      title: 'HAVAİİ PİZZA',
+    TatliData(
+      color: Color.fromRGBO(15, 106, 243, 1),
+      recipeButtonColor: Color.fromARGB(255, 230, 207, 135),
+      image: AssetImage('assets/images/tatlilar/trilece.png'),
+      title: 'TRİLEÇE',
       text:
-          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz\n• 1/2 su bardağı domates sosu\n• 1/4 su bardağı barbekü sos\n• 1/4 su bardağı rendelenmiş mozzarella peyniri\n• 150 gram dilimlenmiş jambon veya hindi jambonu\n• 1/2 su bardağı döner parçaları (isteğe bağlı)\n• 1/2 su bardağı dilimlenmiş ananas (konserve veya taze)\n• 1/4 su bardağı dilimlenmiş siyah zeytin (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş yeşil biber (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş turşu biber (isteğe bağlı)',
+          'Malzemeler:\n• Keki İçin:\n• 3 yumurta\n• 1 su bardağı toz şeker\n• 1 su bardağı un\n• 1 tatlı kaşığı kabartma tozu\n• 1 tatlı kaşığı vanilya özütü\n• Süt Şerbeti İçin:\n• 2 su bardağı süt\n• 1 su bardağı toz şeker\n• 1 su bardağı su\n• Krema İçin:\n• 2 su bardağı süt\n• 2 yemek kaşığı nişasta\n• 1/2 su bardağı toz şeker\n• 2 yemek kaşığı tereyağı\n• 1 tatlı kaşığı vanilya özütü',
       recipeTitle: 'Tarife Bak',
-      person: '4',
-      preparationTime: '80 dakika',
-      cookingTime: '15-20 dakika',
+      person: '8',
+      preparationTime: '40 dakika',
+      coolingTime: '2-3 saat',
     ),
 
-        PizzaData(
-      color: Color.fromARGB(255, 129, 184, 67),
-      recipeButtonColor: Color.fromARGB(255, 120, 154, 192),
-      image: AssetImage('assets/images/pizzalar/pepperoni_pizza.png'),
-      title: 'PEPPERONİ PİZZA',
+        TatliData(
+      color: Color.fromARGB(255, 5, 121, 92),
+      recipeButtonColor: Color.fromARGB(255, 185, 149, 206),
+      image: AssetImage('assets/images/tatlilar/kibris.png'),
+      title: 'KIBRIS TATLISI',
       text:
-          'Malzemeler:\n• 1 paket (yaklaşık 7 gram) instant maya\n• 1 su bardağı ılık su\n• 2.5 su bardağı un\n• 2 yemek kaşığı sıvı yağ\n• 1 çay kaşığı tuz\n• 1 su bardağı domates sosu\n• 1 diş sarımsak (isteğe bağlı, rendelenmiş)\n• 1 çay kaşığı kurutulmuş kekik\n• 1 çay kaşığı kurutulmuş fesleğen\n• Tuz ve karabiber (damak zevkinize göre)\n• 1.5 su bardağı rendelenmiş mozzarella peyniri\n• 100-150 gram dilimlenmiş pepperoni sosis\n•1/2 su bardağı dilimlenmiş siyah zeytin (isteğe bağlı)\n• 1/2 su bardağı dilimlenmiş yeşil biber (isteğe bağlı)\n• 1/4 su bardağı dilimlenmiş turşu biber (isteğe bağlı)',
+          'Malzemeler:\n• 1 su bardağı galeta unu\n• 1/2 su bardağı toz şeker\n• 1 paket kabartma tozu\n• 3 adet yumurta\n• 1/2 su bardağı sıvı yağ\n• 2 su bardağı Hindistan cevizi\n• 1 su bardağı ceviz içi (ince çekilmiş)\n• Kreması için:\n• 1 su bardağı mısır nişastası\n• 1 litre süt\n• 1 paket toz krem şanti\n• 1 çay bardağı toz şeker\n• 1 paket vanilin\n• Şerbeti için:\n• 1 su bardağı toz şeker\n• 1,5 su bardağı su\n• 2 damla taze sıkılmış limon suyu',
       recipeTitle: 'Tarife Bak',
-      person: '4',
-      preparationTime: '80 dakika',
-      cookingTime: '15-20 dakika',
+      person: '6',
+      preparationTime: '40 dakika',
+      coolingTime: '2-3 saat',
     ),
   ];
 
@@ -91,13 +91,13 @@ class _ContainerChangerState extends State<ContainerChanger> {
 
   void changeContainerLeft() {
     setState(() {
-      currentIndex = (currentIndex - 1) % pizzalar.length;
+      currentIndex = (currentIndex - 1) % tatlilar.length;
     });
   }
 
   void changeContainerRight() {
     setState(() {
-      currentIndex = (currentIndex + 1) % pizzalar.length;
+      currentIndex = (currentIndex + 1) % tatlilar.length;
     });
   }
 
@@ -105,17 +105,17 @@ class _ContainerChangerState extends State<ContainerChanger> {
     if (currentIndex == 0) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => MargaritaPizza()),
+        MaterialPageRoute(builder: (context) => Sutlac()),
       );
     } else if (currentIndex == 1 || currentIndex == -2) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HavaiiPizza()),
+        MaterialPageRoute(builder: (context) => Trilece()),
       );
     } else if (currentIndex == 2 || currentIndex == -1) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HavaiiPizza()),
+        MaterialPageRoute(builder: (context) => Kibris()),
       );
     } 
     
@@ -199,22 +199,22 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   preparationTime = 22.0;
 }
 
-    double titleCookingTime;
+    double titleCoolingTime;
 if (MediaQuery.of(context).size.shortestSide < 600) {
   
-  titleCookingTime = 11.0;
+  titleCoolingTime= 11.0;
 } else {
 
-  titleCookingTime = 22.0;
+  titleCoolingTime = 22.0;
 }
 
-    double cookingTime;
+    double coolingTime;
 if (MediaQuery.of(context).size.shortestSide < 600) {
   
-  cookingTime = 15.0;
+  coolingTime = 15.0;
 } else {
 
-  cookingTime = 22.0;
+  coolingTime = 22.0;
 }
 
     double iconSize;
@@ -226,7 +226,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   iconSize = 50.0;
 }
     return Scaffold(
-      backgroundColor: pizzalar[currentIndex].color,
+      backgroundColor: tatlilar[currentIndex].color,
       body: Padding(
         padding: EdgeInsets.fromLTRB(
          MediaQuery.of(context).size.width * 0.02,
@@ -246,7 +246,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                 ),
                 Container(
                   
-                  color: pizzalar[currentIndex].color,
+                  color: tatlilar[currentIndex].color,
                   width: containerWidth,
                   height: MediaQuery.of(context).size.height * 0.87,
                   child: Center(
@@ -254,7 +254,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                       children: [
                         GestureDetector(
                           child: Image(
-                            image: pizzalar[currentIndex].image,
+                            image: tatlilar[currentIndex].image,
                               width: MediaQuery.of(context).size.width * 0.6,
                           ),
                         ),
@@ -262,7 +262,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              pizzalar[currentIndex].title,
+                              tatlilar[currentIndex].title,
                               style: GoogleFonts.caveat( fontSize: titleFontSize, fontWeight: FontWeight.w900),
                             ),
                             SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
@@ -283,7 +283,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: personTitleFontSize, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        pizzalar[currentIndex].person,
+                                        tatlilar[currentIndex].person,
                                         style: GoogleFonts.caveat( fontSize: personFontSize, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -304,7 +304,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                         style: GoogleFonts.caveat( fontSize: titlePreparationTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        pizzalar[currentIndex].preparationTime,
+                                        tatlilar[currentIndex].preparationTime,
                                         style: GoogleFonts.caveat( fontSize: preparationTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
@@ -320,12 +320,12 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'PİŞİRME SÜRESİ',
-                                        style: GoogleFonts.caveat( fontSize: titleCookingTime, fontWeight: FontWeight.w900),
+                                        'SOĞUTMA SÜRESİ',
+                                        style: GoogleFonts.caveat( fontSize: titleCoolingTime, fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        pizzalar[currentIndex].cookingTime,
-                                        style: GoogleFonts.caveat( fontSize: cookingTime, fontWeight: FontWeight.w600),
+                                        tatlilar[currentIndex].coolingTime,
+                                        style: GoogleFonts.caveat( fontSize: coolingTime, fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
@@ -338,14 +338,14 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                         Column(
                           children: [
                             Text(
-                              pizzalar[currentIndex].text,
+                              tatlilar[currentIndex].text,
                               style: GoogleFonts.cormorantInfant( fontSize: textFontSize, fontWeight: FontWeight.w900),
 
                             ),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(
-                                primary: pizzalar[currentIndex]
+                                primary: tatlilar[currentIndex]
                                     .recipeButtonColor,
                                 onPrimary: Colors.white,
                                 padding: EdgeInsets.symmetric(
@@ -356,7 +356,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                                 elevation: 3,
                               ),
                               child: Text(
-                                pizzalar[currentIndex].recipeTitle,
+                                tatlilar[currentIndex].recipeTitle,
                                 style: GoogleFonts.caveat( fontSize: recipeTitleFontSize, fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -382,7 +382,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   }
 }
 
-class PizzaData {
+class TatliData {
   final Color color;
   final Color recipeButtonColor;
   final AssetImage image;
@@ -391,9 +391,9 @@ class PizzaData {
   final String recipeTitle;
   final String person;
   final String preparationTime;
-  final String cookingTime;
+  final String coolingTime;
 
-  PizzaData({
+  TatliData({
     required this.color,
     required this.recipeButtonColor,
     required this.image,
@@ -402,6 +402,6 @@ class PizzaData {
     required this.recipeTitle,
     required this.person,
     required this.preparationTime,
-    required this.cookingTime,
+    required this.coolingTime,
   });
 }
