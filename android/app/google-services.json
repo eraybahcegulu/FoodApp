@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:157223722652:android:0f8435c6da8b46224cd759",
         "android_client_info": {
-          "package_name": "com.example.foodapp"
+          "package_name": "com.eraybahcegulu.foodapp"
         }
       },
       "oauth_client": [
@@ -35,7 +35,7 @@
               "client_id": "157223722652-iq26ctfritt9t2q5r1spl9s1v1h45k1d.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.foodapp"
+                "bundle_id": "com.eraybahcegulu.foodapp"
               }
             }
           ]
