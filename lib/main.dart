@@ -9,15 +9,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_database/firebase_database.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
   @override
@@ -27,7 +26,6 @@ class MyApp extends StatelessWidget {
 }
 
 class Main extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     double titleFontSize;
@@ -38,7 +36,6 @@ class Main extends StatelessWidget {
     }
 
     return MaterialApp(
-      
       home: Scaffold(
         body: Padding(
           padding: EdgeInsets.fromLTRB(
@@ -188,10 +185,17 @@ class Main extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      SizedBox(width: MediaQuery.of(context).size.width * 0.1),
-                      IconButton(
-                        onPressed: () {},
-                       icon: FaIcon(FontAwesomeIcons.plus)),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+                      const Icon(
+                        FontAwesomeIcons.burger,
+                        size: 40,
+                      ),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+                      const Icon(
+                        FontAwesomeIcons.pizzaSlice,
+                        size: 40,
+                      ),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.05),
                       Text(
                         'İSTEDİĞİNİ EKLE',
                         style: GoogleFonts.caveat(
