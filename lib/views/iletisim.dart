@@ -135,9 +135,9 @@ class Iletisim extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                if (adController.text.length >= 3 &&
-                    soyadController.text.length >= 3 &&
-                    mesajController.text.length >= 3) {
+                if (adController.text.length >= 2 &&
+                    soyadController.text.length >= 2 &&
+                    mesajController.text.length >= 2) {
                   sendDataToFirebase(adController.text, soyadController.text,
                       mesajController.text);
 
@@ -149,13 +149,13 @@ class Iletisim extends StatelessWidget {
                     content: Text('Mesajınız gönderildi.'),
                     duration: Duration(seconds: 2),
                     backgroundColor:
-                        Colors.green, // SnackBar'ın arka plan rengi
+                        Colors.green, 
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 } else {
                   final snackBar = SnackBar(
                     content: Text(
-                        'Lütfen tüm alanları en az 3 karakter olarak doldurun.'),
+                        'Lütfen tüm alanları en az 2 karakter olarak doldurun.'),
                     duration: Duration(seconds: 2),
                     backgroundColor: Colors.red,
                   );

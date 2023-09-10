@@ -142,7 +142,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
   textFontSize = 14.0;
 } else {
 
-  textFontSize = 26.0;
+  textFontSize = 23.0;
 }
 
     double titleFontSize;
