@@ -157,18 +157,18 @@ class Iletisim extends StatelessWidget {
                     content: Text(
                         'Lütfen tüm alanları en az 3 karakter olarak doldurun.'),
                     duration: Duration(seconds: 2),
-                    backgroundColor: Colors.red, // SnackBar'ın arka plan rengi
+                    backgroundColor: Colors.red,
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Butonun arka plan rengi
-                foregroundColor: Colors.white, // Buton metninin rengi
-                elevation: 3, // Gölgelendirme miktarı
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white, 
+                elevation: 3,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
-                      10), // Butonun köşe yuvarlama miktarı
+                      10),
                 ),
               ),
               child: Padding(
@@ -195,18 +195,14 @@ class Iletisim extends StatelessWidget {
   }
 
   void sendDataToFirebase(String ad, String soyad, String mesaj) {
-    try {
       _database.child('iletisim').push().set({
         'ad': ad,
         'soyad': soyad,
         'mesaj': mesaj,
       });
-      print('Veri başarıyla Firebase Realtime Database\'e gönderildi.');
-    } catch (e) {
-      print('Veri gönderme hatası: $e');
-    }
+    } 
   }
-}
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
