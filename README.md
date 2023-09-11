@@ -10,9 +10,9 @@
 
 ![Screenshot_3](https://github.com/eraybahcegulu/FoodApp/assets/84785201/44626946-a157-4439-ad90-7c183d368171)
 
-![Screenshot_5](https://github.com/eraybahcegulu/FoodApp/assets/84785201/6d8521bc-7c0a-48ea-a19a-4e360599105a)
-
 ![Screenshot_4](https://github.com/eraybahcegulu/FoodApp/assets/84785201/1c927985-bc47-4f3c-8a12-42c94f0edd08)
+
+![Screenshot_5](https://github.com/eraybahcegulu/FoodApp/assets/84785201/6d8521bc-7c0a-48ea-a19a-4e360599105a)
 
 ![Screenshot_6](https://github.com/eraybahcegulu/FoodApp/assets/84785201/9e19749c-b0fe-470b-9967-5a760369566d)
 
