@@ -99,12 +99,12 @@ class Main extends StatelessWidget {
                   child: Row(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(30.0), // Köşelerin yuvarlaklığını ayarlayın
+                        borderRadius: BorderRadius.circular(30.0),
                         child: Image.asset(
                           'assets/images/menu/pizza.jpg',
                           width: MediaQuery.of(context).size.width * 0.4,
                           height: MediaQuery.of(context).size.height * 0.15,
-                          fit: BoxFit.cover, // Resmi köşelere sığdırmak için kullanabilirsiniz
+                          fit: BoxFit.cover,
                         ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
