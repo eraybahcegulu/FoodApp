@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:foodapp/views/tatlilar/kibris.dart';
 import 'package:foodapp/views/tatlilar/sutlac.dart';
 import 'package:foodapp/views/tatlilar/trilece.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 void main() {
   runApp(Tatli());
 }

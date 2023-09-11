@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^10.5.0
 
+
   cupertino_icons: ^1.0.2
   firebase_core: ^2.15.1
   cloud_firestore: ^4.9.1
@@ -34,10 +35,11 @@ flutter:
     - assets/images/makarnalar/
     - assets/images/tatlilar/
     - assets/logo.png
-  
-flutter_icons:
+  uses-material-design: true
+   
+flutter_launcher_icons:
   android: true
   ios: false
   image_path: "assets/logo.png"
 
-  uses-material-design: true
+  

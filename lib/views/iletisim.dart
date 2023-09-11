@@ -114,7 +114,7 @@ class Iletisim extends StatelessWidget {
                 controller: mesajController,
                 maxLength: 100,
                 style: GoogleFonts.cormorantInfant(
-                          fontSize: textFontSize, fontWeight: FontWeight.w700),
+                    fontSize: textFontSize, fontWeight: FontWeight.w700),
                 decoration: InputDecoration(
                   labelText: 'Eklenmesini istediğiniz yemek, tatlı vb. ismi',
                   labelStyle: GoogleFonts.cormorantInfant(
@@ -148,8 +148,7 @@ class Iletisim extends StatelessWidget {
                   final snackBar = SnackBar(
                     content: Text('Mesajınız gönderildi.'),
                     duration: Duration(seconds: 2),
-                    backgroundColor:
-                        Colors.green, 
+                    backgroundColor: Colors.green,
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 } else {
@@ -164,11 +163,10 @@ class Iletisim extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                foregroundColor: Colors.white, 
+                foregroundColor: Colors.white,
                 elevation: 3,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                      10),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
               child: Padding(
@@ -195,14 +193,17 @@ class Iletisim extends StatelessWidget {
   }
 
   void sendDataToFirebase(String ad, String soyad, String mesaj) {
-      _database.child('iletisim').push().set({
-        'ad': ad,
-        'soyad': soyad,
-        'mesaj': mesaj,
-      });
-    } 
+    final DateTime now = DateTime.now();
+    final String tarih =
+        "${now.day.toString().padLeft(2, '0')}-${now.month.toString().padLeft(2, '0')}-${now.year} ${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}";
+    _database.child('iletisim').push().set({
+      'ad': ad,
+      'soyad': soyad,
+      'mesaj': mesaj,
+      'tarih': tarih,
+    });
   }
-
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
