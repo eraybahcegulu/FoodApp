@@ -324,8 +324,8 @@ class _ContainerChangerState extends State<ContainerChanger> {
                         GestureDetector(
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(25.0),
-                            child: Image.asset(
-                              'assets/images/menu/makarna.jpg',
+                            child: Image(
+                              image: salatalar[currentIndex].image,
                               width: MediaQuery.of(context).size.width * 0.6,
                               height: MediaQuery.of(context).size.height * 0.15,
                               fit: BoxFit.cover,
