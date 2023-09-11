@@ -31,11 +31,9 @@ class Main extends StatelessWidget {
     double titleFontSize;
     if (MediaQuery.of(context).size.shortestSide < 400) {
       titleFontSize = 20;
-    } 
-    else if (MediaQuery.of(context).size.shortestSide < 600) {
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
       titleFontSize = 30;
-    }
-    else {
+    } else {
       titleFontSize = 50;
     }
 
@@ -65,10 +63,14 @@ class Main extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(
-                        'assets/images/menu/salata.png',
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        height: MediaQuery.of(context).size.height * 0.2,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset(
+                          'assets/images/menu/salata.png',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
@@ -96,10 +98,14 @@ class Main extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(
-                        'assets/images/menu/pizza.jpg',
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        height: MediaQuery.of(context).size.height * 0.2,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0), // Köşelerin yuvarlaklığını ayarlayın
+                        child: Image.asset(
+                          'assets/images/menu/pizza.jpg',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          fit: BoxFit.cover, // Resmi köşelere sığdırmak için kullanabilirsiniz
+                        ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
@@ -127,10 +133,14 @@ class Main extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(
-                        'assets/images/menu/makarna.jpg',
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        height: MediaQuery.of(context).size.height * 0.2,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset(
+                          'assets/images/menu/makarna.jpg',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(
@@ -158,10 +168,14 @@ class Main extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(
-                        'assets/images/menu/tatli.png',
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        height: MediaQuery.of(context).size.height * 0.2,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset(
+                          'assets/images/menu/tatli.png',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.03),
                       Text(

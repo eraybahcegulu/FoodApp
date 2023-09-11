@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:foodapp/views/makarnalar/kori_eriste.dart';
 import 'package:foodapp/views/makarnalar/lazanya.dart';
 import 'package:foodapp/views/makarnalar/spagetti.dart';
+
 void main() {
   runApp(Makarna());
 }
@@ -10,37 +11,30 @@ void main() {
 class Makarna extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
-   
-        double appBarTitleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  appBarTitleFontSize = 15;
-} 
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  appBarTitleFontSize = 18;
-} 
-
-else {
-
-  appBarTitleFontSize = 30;
-}
+    double appBarTitleFontSize;
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      appBarTitleFontSize = 15;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      appBarTitleFontSize = 18;
+    } else {
+      appBarTitleFontSize = 30;
+    }
     return MaterialApp(
-      
       home: Scaffold(
         appBar: AppBar(
-          title: Text('MAKARNALAR',
-          
-          style: GoogleFonts.caveat( fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold),),
-                    leading: IconButton(
+          title: Text(
+            'MAKARNALAR',
+            style: GoogleFonts.caveat(
+                fontSize: appBarTitleFontSize, fontWeight: FontWeight.bold),
+          ),
+          leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
           backgroundColor: Colors.red,
-           toolbarHeight: MediaQuery.of(context).size.height * 0.06,
+          toolbarHeight: MediaQuery.of(context).size.height * 0.06,
         ),
         body: ContainerChanger(),
       ),
@@ -79,8 +73,7 @@ class _ContainerChangerState extends State<ContainerChanger> {
       preparationTime: '40 dakika',
       cookingTime: '30-35 dakika',
     ),
-
-        MakarnaData(
+    MakarnaData(
       color: Color.fromARGB(255, 94, 206, 178),
       recipeButtonColor: Color.fromARGB(255, 147, 8, 228),
       image: AssetImage('assets/images/makarnalar/kori_soslu_eriste.png'),
@@ -124,195 +117,136 @@ class _ContainerChangerState extends State<ContainerChanger> {
         context,
         MaterialPageRoute(builder: (context) => KoriEriste()),
       );
-    } 
-    
+    }
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
-
-
-double containerHeight;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  containerHeight = MediaQuery.of(context).size.height * 0.86;
-} 
-
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  containerHeight = MediaQuery.of(context).size.height * 0.87;
-} 
-else {
-
-  containerHeight = MediaQuery.of(context).size.height * 0.88;
-}
-
+    double containerHeight;
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      containerHeight = MediaQuery.of(context).size.height * 0.86;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      containerHeight = MediaQuery.of(context).size.height * 0.87;
+    } else {
+      containerHeight = MediaQuery.of(context).size.height * 0.88;
+    }
 
     double containerWidth;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  containerWidth = MediaQuery.of(context).size.width * 0.66;
-} 
-
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  containerWidth = MediaQuery.of(context).size.width * 0.72;
-} 
-else {
-
-  containerWidth = MediaQuery.of(context).size.width * 0.81;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      containerWidth = MediaQuery.of(context).size.width * 0.66;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      containerWidth = MediaQuery.of(context).size.width * 0.75;
+    } else {
+      containerWidth = MediaQuery.of(context).size.width * 0.81;
+    }
 
     double textFontSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  textFontSize = 10.0;
-} 
+        if (MediaQuery.of(context).size.shortestSide < 400) {
+      textFontSize = 11.0;
+    }
 
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  textFontSize = 14.0;
-} else {
-
-  textFontSize = 16.0;
-}
+    else if (MediaQuery.of(context).size.shortestSide < 470) {
+      textFontSize = 14.0;
+    }
+     else if (MediaQuery.of(context).size.shortestSide < 600) {
+      textFontSize = 18.0;
+    } 
+    else if (800 < MediaQuery.of(context).size.shortestSide  ) {
+      textFontSize = 25.0;
+    } 
+    else {
+      textFontSize = 20.0;
+    }
 
     double titleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  titleFontSize = 15.0;
-} 
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  titleFontSize = 18.0;
-} 
-else {
-
-  titleFontSize = 30.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      titleFontSize = 15.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      titleFontSize = 18.0;
+    } else {
+      titleFontSize = 30.0;
+    }
 
     double recipeTitleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  recipeTitleFontSize = 15.0;
-} 
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  recipeTitleFontSize = 16.0;
-}
-else {
-
-  recipeTitleFontSize = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      recipeTitleFontSize = 15.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      recipeTitleFontSize = 16.0;
+    } else {
+      recipeTitleFontSize = 20.0;
+    }
 
     double personTitleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  personTitleFontSize = 9.0;
-} 
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  personTitleFontSize = 11.0;
-}
-else {
-
-  personTitleFontSize = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      personTitleFontSize = 9.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      personTitleFontSize = 11.0;
+    } else {
+      personTitleFontSize = 20.0;
+    }
 
     double personFontSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  personFontSize = 12.0;
-}
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  personFontSize = 15.0;
-} 
- else {
-
-  personFontSize = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      personFontSize = 12.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      personFontSize = 15.0;
+    } else {
+      personFontSize = 20.0;
+    }
 
     double titlePreparationTime;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  titlePreparationTime = 9.0;
-}
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  titlePreparationTime = 11.0;
-}
- else {
-
-  titlePreparationTime = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      titlePreparationTime = 9.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      titlePreparationTime = 11.0;
+    } else {
+      titlePreparationTime = 20.0;
+    }
 
     double preparationTime;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  preparationTime = 12.0;
-}
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  preparationTime = 15.0;
-}
- else {
-
-  preparationTime = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      preparationTime = 12.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      preparationTime = 15.0;
+    } else {
+      preparationTime = 20.0;
+    }
 
     double titleCookingTime;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  titleCookingTime= 9.0;
-}
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  titleCookingTime= 11.0;
-} 
- else {
-
-  titleCookingTime = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      titleCookingTime = 9.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      titleCookingTime = 11.0;
+    } else {
+      titleCookingTime = 20.0;
+    }
 
     double cookingTime;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  cookingTime = 11.0;
-} 
-
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  cookingTime = 15.0;
-} else {
-
-  cookingTime = 20.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      cookingTime = 11.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      cookingTime = 15.0;
+    } else {
+      cookingTime = 20.0;
+    }
 
     double iconSize;
-if (MediaQuery.of(context).size.shortestSide < 400) {
-  
-  iconSize = 25.0;
-} 
-else if (MediaQuery.of(context).size.shortestSide < 600) {
-  
-  iconSize = 30.0;
-}
-else {
-
-  iconSize = 50.0;
-}
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      iconSize = 25.0;
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
+      iconSize = 30.0;
+    } else {
+      iconSize = 50.0;
+    }
     return Scaffold(
       backgroundColor: makarnalar[currentIndex].color,
       body: Padding(
         padding: EdgeInsets.fromLTRB(
-         MediaQuery.of(context).size.width * 0.02,
-         MediaQuery.of(context).size.height * 0.02,
-         MediaQuery.of(context).size.width * 0.01,
-         MediaQuery.of(context).size.height * 0.01,
-),
+          MediaQuery.of(context).size.width * 0.02,
+          MediaQuery.of(context).size.height * 0.02,
+          MediaQuery.of(context).size.width * 0.01,
+          MediaQuery.of(context).size.height * 0.01,
+        ),
         child: Column(
           children: [
             Row(
@@ -324,7 +258,6 @@ else {
                   iconSize: iconSize,
                 ),
                 Container(
-                  
                   color: makarnalar[currentIndex].color,
                   width: containerWidth,
                   height: containerHeight,
@@ -332,9 +265,14 @@ else {
                     child: Column(
                       children: [
                         GestureDetector(
-                          child: Image(
-                            image: makarnalar[currentIndex].image,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25.0),
+                            child: Image.asset(
+                              'assets/images/menu/makarna.jpg',
                               width: MediaQuery.of(context).size.width * 0.6,
+                              height: MediaQuery.of(context).size.height * 0.15,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Column(
@@ -342,69 +280,100 @@ else {
                           children: [
                             Text(
                               makarnalar[currentIndex].title,
-                              style: GoogleFonts.caveat( fontSize: titleFontSize, fontWeight: FontWeight.w900),
+                              style: GoogleFonts.caveat(
+                                  fontSize: titleFontSize,
+                                  fontWeight: FontWeight.w900),
                             ),
-                            SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.01,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width * 0.21,
-                                  height: MediaQuery.of(context).size.height * 0.06,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.21,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black,width: 1.5,),
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 1.5,
+                                    ),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'KAÇ KİŞİLİK',
-                                        style: GoogleFonts.caveat( fontSize: personTitleFontSize, fontWeight: FontWeight.w900),
+                                        style: GoogleFonts.caveat(
+                                            fontSize: personTitleFontSize,
+                                            fontWeight: FontWeight.w900),
                                       ),
                                       Text(
                                         makarnalar[currentIndex].person,
-                                        style: GoogleFonts.caveat( fontSize: personFontSize, fontWeight: FontWeight.w600),
+                                        style: GoogleFonts.caveat(
+                                            fontSize: personFontSize,
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  width: MediaQuery.of(context).size.width * 0.24,
-                                  height: MediaQuery.of(context).size.height * 0.06, 
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.24,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black,width: 1.5,),
-                                    
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 1.5,
+                                    ),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'HAZIRLAMA SÜRESİ',
-                                        style: GoogleFonts.caveat( fontSize: titlePreparationTime, fontWeight: FontWeight.w900),
+                                        style: GoogleFonts.caveat(
+                                            fontSize: titlePreparationTime,
+                                            fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        makarnalar[currentIndex].preparationTime,
-                                        style: GoogleFonts.caveat( fontSize: preparationTime, fontWeight: FontWeight.w600),
+                                        makarnalar[currentIndex]
+                                            .preparationTime,
+                                        style: GoogleFonts.caveat(
+                                            fontSize: preparationTime,
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  width: MediaQuery.of(context).size.width * 0.21,
-                                  height: MediaQuery.of(context).size.height * 0.06,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.21,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.06,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black,width: 1.5,),
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 1.5,
+                                    ),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         'PİŞİRME SÜRESİ',
-                                        style: GoogleFonts.caveat( fontSize: titleCookingTime, fontWeight: FontWeight.w900),
+                                        style: GoogleFonts.caveat(
+                                            fontSize: titleCookingTime,
+                                            fontWeight: FontWeight.w900),
                                       ),
                                       Text(
                                         makarnalar[currentIndex].cookingTime,
-                                        style: GoogleFonts.caveat( fontSize: cookingTime, fontWeight: FontWeight.w600),
+                                        style: GoogleFonts.caveat(
+                                            fontSize: cookingTime,
+                                            fontWeight: FontWeight.w600),
                                       ),
                                     ],
                                   ),
@@ -413,22 +382,27 @@ else {
                             ),
                           ],
                         ),
-                        SizedBox(height: MediaQuery.of(context).size.height * 0.005,),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.005,
+                        ),
                         Column(
                           children: [
                             Text(
                               makarnalar[currentIndex].text,
-                              style: GoogleFonts.cormorantInfant( fontSize: textFontSize, fontWeight: FontWeight.w900),
-
+                              style: GoogleFonts.cormorantInfant(
+                                  fontSize: textFontSize,
+                                  fontWeight: FontWeight.w900),
                             ),
                             ElevatedButton(
                               onPressed: navigateToRecipePage,
                               style: ElevatedButton.styleFrom(
-                                primary: makarnalar[currentIndex]
-                                    .recipeButtonColor,
+                                primary:
+                                    makarnalar[currentIndex].recipeButtonColor,
                                 onPrimary: Colors.white,
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: MediaQuery.of(context).size.height * 0.03 ),
+                                    horizontal:
+                                        MediaQuery.of(context).size.height *
+                                            0.03),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -436,7 +410,9 @@ else {
                               ),
                               child: Text(
                                 makarnalar[currentIndex].recipeTitle,
-                                style: GoogleFonts.caveat( fontSize: recipeTitleFontSize, fontWeight: FontWeight.w500),
+                                style: GoogleFonts.caveat(
+                                    fontSize: recipeTitleFontSize,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ),
                           ],
@@ -449,7 +425,7 @@ else {
                   child: IconButton(
                     onPressed: changeContainerRight,
                     icon: Icon(Icons.chevron_right),
-                    iconSize: iconSize, 
+                    iconSize: iconSize,
                   ),
                 ),
               ],
