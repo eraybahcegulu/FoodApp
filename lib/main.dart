@@ -29,10 +29,14 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleFontSize;
-    if (MediaQuery.of(context).size.shortestSide < 600) {
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      titleFontSize = 20;
+    } 
+    else if (MediaQuery.of(context).size.shortestSide < 600) {
       titleFontSize = 30;
-    } else {
-      titleFontSize = 70;
+    }
+    else {
+      titleFontSize = 50;
     }
 
     return MaterialApp(

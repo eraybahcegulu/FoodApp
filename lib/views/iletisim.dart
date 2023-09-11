@@ -12,16 +12,26 @@ class Iletisim extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double appBarTitleFontSize;
-    if (MediaQuery.of(context).size.shortestSide < 600) {
-      appBarTitleFontSize = 18.0;
-    } else {
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      appBarTitleFontSize = 15.0;
+    } 
+    else if (MediaQuery.of(context).size.shortestSide < 600) {
+      appBarTitleFontSize = 18;
+    }
+    
+    else {
       appBarTitleFontSize = 30.0;
     }
 
     double textFontSize;
-    if (MediaQuery.of(context).size.shortestSide < 600) {
+    if (MediaQuery.of(context).size.shortestSide < 400) {
+      textFontSize = 14.0;
+    } 
+    else if (MediaQuery.of(context).size.shortestSide < 600) {
       textFontSize = 18.0;
-    } else {
+    } 
+    
+    else {
       textFontSize = 30.0;
     }
 

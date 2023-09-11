@@ -11,11 +11,17 @@ class Pizza extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    double appBarTitleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+        double appBarTitleFontSize;
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  appBarTitleFontSize = 15;
+} 
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   appBarTitleFontSize = 18;
-} else {
+} 
+
+else {
 
   appBarTitleFontSize = 30;
 }
@@ -127,101 +133,173 @@ class _ContainerChangerState extends State<ContainerChanger> {
   Widget build(BuildContext context) {
 
 
+double containerHeight;
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  containerHeight = MediaQuery.of(context).size.height * 0.86;
+} 
+
+else if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  containerHeight = MediaQuery.of(context).size.height * 0.87;
+} 
+else {
+
+  containerHeight = MediaQuery.of(context).size.height * 0.88;
+}
+
+
     double containerWidth;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  containerWidth = MediaQuery.of(context).size.width * 0.66;
+} 
+
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   containerWidth = MediaQuery.of(context).size.width * 0.72;
-} else {
+} 
+else {
 
   containerWidth = MediaQuery.of(context).size.width * 0.81;
 }
 
     double textFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  textFontSize = 10.0;
+} 
+
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   textFontSize = 14.0;
 } else {
 
-  textFontSize = 23.0;
+  textFontSize = 16.0;
 }
 
     double titleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  titleFontSize = 15.0;
+} 
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   titleFontSize = 18.0;
-} else {
+} 
+else {
 
-  titleFontSize = 40.0;
+  titleFontSize = 30.0;
 }
 
     double recipeTitleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  recipeTitleFontSize = 15.0;
+} 
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   recipeTitleFontSize = 16.0;
-} else {
+}
+else {
 
-  recipeTitleFontSize = 25.0;
+  recipeTitleFontSize = 20.0;
 }
 
     double personTitleFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  personTitleFontSize = 9.0;
+} 
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   personTitleFontSize = 11.0;
-} else {
+}
+else {
 
-  personTitleFontSize = 22.0;
+  personTitleFontSize = 20.0;
 }
 
     double personFontSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  personFontSize = 12.0;
+}
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   personFontSize = 15.0;
-} else {
+} 
+ else {
 
-  personFontSize = 22.0;
+  personFontSize = 20.0;
 }
 
     double titlePreparationTime;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  titlePreparationTime = 9.0;
+}
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   titlePreparationTime = 11.0;
-} else {
+}
+ else {
 
-  titlePreparationTime = 22.0;
+  titlePreparationTime = 20.0;
 }
 
     double preparationTime;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  preparationTime = 12.0;
+}
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   preparationTime = 15.0;
-} else {
+}
+ else {
 
-  preparationTime = 22.0;
+  preparationTime = 20.0;
 }
 
     double titleCookingTime;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
   
-  titleCookingTime = 11.0;
-} else {
+  titleCookingTime= 9.0;
+}
+else if (MediaQuery.of(context).size.shortestSide < 600) {
+  
+  titleCookingTime= 11.0;
+} 
+ else {
 
-  titleCookingTime = 22.0;
+  titleCookingTime = 20.0;
 }
 
     double cookingTime;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  cookingTime = 11.0;
+} 
+
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   cookingTime = 15.0;
 } else {
 
-  cookingTime = 22.0;
+  cookingTime = 20.0;
 }
 
     double iconSize;
-if (MediaQuery.of(context).size.shortestSide < 600) {
+if (MediaQuery.of(context).size.shortestSide < 400) {
+  
+  iconSize = 25.0;
+} 
+else if (MediaQuery.of(context).size.shortestSide < 600) {
   
   iconSize = 30.0;
-} else {
+}
+else {
 
   iconSize = 50.0;
 }
@@ -248,7 +326,7 @@ if (MediaQuery.of(context).size.shortestSide < 600) {
                   
                   color: pizzalar[currentIndex].color,
                   width: containerWidth,
-                  height: MediaQuery.of(context).size.height * 0.87,
+                  height: containerHeight,
                   child: Center(
                     child: Column(
                       children: [
