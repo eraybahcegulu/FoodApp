@@ -128,15 +128,31 @@ class _ContainerChangerState extends State<ContainerChanger> {
 
   int currentIndex = 0;
 
+    double containerOffset = 0.0;
+
   void changeContainerLeft() {
     setState(() {
       currentIndex = (currentIndex - 1) % salatalar.length;
+      containerOffset = -0.05;
+    });
+    const animationDuration = Duration(milliseconds: 300);
+    Future.delayed(animationDuration, () {
+      setState(() {
+        containerOffset = 0.0;
+      });
     });
   }
 
   void changeContainerRight() {
     setState(() {
       currentIndex = (currentIndex + 1) % salatalar.length;
+      containerOffset = 0.05;
+    });
+    const animationDuration = Duration(milliseconds: 300);
+    Future.delayed(animationDuration, () {
+      setState(() {
+        containerOffset = 0.0;
+      });
     });
   }
 
@@ -314,7 +330,14 @@ class _ContainerChangerState extends State<ContainerChanger> {
                   icon: Icon(Icons.chevron_left),
                   iconSize: iconSize,
                 ),
-                Container(
+                AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  transform: Matrix4.translationValues(
+                    MediaQuery.of(context).size.width * 0.5 * containerOffset,
+                    0,
+                    0,
+                  ),
+                child: Container(
                   color: salatalar[currentIndex].color,
                   width: containerWidth,
                   height: containerHeight,
@@ -477,6 +500,7 @@ class _ContainerChangerState extends State<ContainerChanger> {
                     ),
                   ),
                 ),
+            ),
                 Expanded(
                   child: IconButton(
                     onPressed: changeContainerRight,

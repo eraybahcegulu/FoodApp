@@ -25,26 +25,28 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
 class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleFontSize;
     if (MediaQuery.of(context).size.shortestSide < 400) {
-      titleFontSize = 20;
+      titleFontSize = 15;
     } else if (MediaQuery.of(context).size.shortestSide < 600) {
-      titleFontSize = 30;
+      titleFontSize = 25;
     } else {
-      titleFontSize = 50;
+      titleFontSize = 45;
     }
 
     return MaterialApp(
       home: Scaffold(
         body: Padding(
           padding: EdgeInsets.fromLTRB(
-            MediaQuery.of(context).size.width * 0.015,
-            MediaQuery.of(context).size.height * 0.015,
-            MediaQuery.of(context).size.width * 0.015,
-            MediaQuery.of(context).size.height * 0.015,
+            MediaQuery.of(context).size.width * 0.04,
+            MediaQuery.of(context).size.height * 0.04,
+            MediaQuery.of(context).size.width * 0.04,
+            MediaQuery.of(context).size.height * 0.04,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -54,7 +56,19 @@ class Main extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Salata()),
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return Salata();
+                        },
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(1.0, 0.0);
+                          const end = Offset.zero;
+                          const curve = Curves.easeInOut;
+                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(position: offsetAnimation, child: child);
+                        },
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -62,6 +76,7 @@ class Main extends StatelessWidget {
                     onPrimary: Colors.white,
                   ),
                   child: Row(
+                    
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(30.0),
@@ -89,7 +104,19 @@ class Main extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Pizza()),
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return Pizza();
+                        },
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(1.0, 0.0);
+                          const end = Offset.zero;
+                          const curve = Curves.easeInOut;
+                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(position: offsetAnimation, child: child);
+                        },
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -124,7 +151,19 @@ class Main extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Makarna()),
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return Makarna();
+                        },
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(1.0, 0.0);
+                          const end = Offset.zero;
+                          const curve = Curves.easeInOut;
+                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(position: offsetAnimation, child: child);
+                        },
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -159,7 +198,19 @@ class Main extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Tatli()),
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return Tatli();
+                        },
+                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(1.0, 0.0);
+                          const end = Offset.zero;
+                          const curve = Curves.easeInOut;
+                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(position: offsetAnimation, child: child);
+                        },
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -231,3 +282,4 @@ class Main extends StatelessWidget {
     );
   }
 }
+

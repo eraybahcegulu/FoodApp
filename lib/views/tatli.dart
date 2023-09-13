@@ -90,15 +90,31 @@ class _ContainerChangerState extends State<ContainerChanger> {
 
   int currentIndex = 0;
 
+  double containerOffset = 0.0;
+
   void changeContainerLeft() {
     setState(() {
       currentIndex = (currentIndex - 1) % tatlilar.length;
+      containerOffset = -0.05;
+    });
+    const animationDuration = Duration(milliseconds: 300);
+    Future.delayed(animationDuration, () {
+      setState(() {
+        containerOffset = 0.0;
+      });
     });
   }
 
   void changeContainerRight() {
     setState(() {
       currentIndex = (currentIndex + 1) % tatlilar.length;
+      containerOffset = 0.05;
+    });
+    const animationDuration = Duration(milliseconds: 300);
+    Future.delayed(animationDuration, () {
+      setState(() {
+        containerOffset = 0.0;
+      });
     });
   }
 
@@ -144,19 +160,13 @@ class _ContainerChangerState extends State<ContainerChanger> {
     double textFontSize;
     if (MediaQuery.of(context).size.shortestSide < 400) {
       textFontSize = 11.0;
-    }
-
-    else if (MediaQuery.of(context).size.shortestSide < 450) {
+    } else if (MediaQuery.of(context).size.shortestSide < 450) {
       textFontSize = 14.0;
-    } 
-    else if (MediaQuery.of(context).size.shortestSide < 600) {
+    } else if (MediaQuery.of(context).size.shortestSide < 600) {
       textFontSize = 18.0;
-    } 
-    else if (800 < MediaQuery.of(context).size.shortestSide  ) {
+    } else if (800 < MediaQuery.of(context).size.shortestSide) {
       textFontSize = 25.0;
-    } 
-    
-    else {
+    } else {
       textFontSize = 20.0;
     }
 
@@ -259,166 +269,181 @@ class _ContainerChangerState extends State<ContainerChanger> {
                   icon: Icon(Icons.chevron_left),
                   iconSize: iconSize,
                 ),
-                Container(
-                  color: tatlilar[currentIndex].color,
-                  width: containerWidth,
-                  height: containerHeight,
-                  child: Center(
-                    child: Column(
-                      children: [
-                        GestureDetector(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25.0), 
-                            child: Image(
-                              image: tatlilar[currentIndex].image,
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              height: MediaQuery.of(context).size.height * 0.15,
-                              fit: BoxFit.cover,
+                AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  transform: Matrix4.translationValues(
+                    MediaQuery.of(context).size.width * 0.5 * containerOffset,
+                    0,
+                    0,
+                  ),
+                  child: Container(
+                    color: tatlilar[currentIndex].color,
+                    width: containerWidth,
+                    height: containerHeight,
+                    child: Center(
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(25.0),
+                              child: Image(
+                                image: tatlilar[currentIndex].image,
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              tatlilar[currentIndex].title,
-                              style: GoogleFonts.caveat(
-                                  fontSize: titleFontSize,
-                                  fontWeight: FontWeight.w900),
-                            ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.01,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.21,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.06,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.black,
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'KAÇ KİŞİLİK',
-                                        style: GoogleFonts.caveat(
-                                            fontSize: personTitleFontSize,
-                                            fontWeight: FontWeight.w900),
-                                      ),
-                                      Text(
-                                        tatlilar[currentIndex].person,
-                                        style: GoogleFonts.caveat(
-                                            fontSize: personFontSize,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.24,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.06,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.black,
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'HAZIRLAMA SÜRESİ',
-                                        style: GoogleFonts.caveat(
-                                            fontSize: titlePreparationTime,
-                                            fontWeight: FontWeight.w900),
-                                      ),
-                                      Text(
-                                        tatlilar[currentIndex].preparationTime,
-                                        style: GoogleFonts.caveat(
-                                            fontSize: preparationTime,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.21,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.06,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.black,
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'SOĞUTMA SÜRESİ',
-                                        style: GoogleFonts.caveat(
-                                            fontSize: titleCoolingTime,
-                                            fontWeight: FontWeight.w900),
-                                      ),
-                                      Text(
-                                        tatlilar[currentIndex].coolingTime,
-                                        style: GoogleFonts.caveat(
-                                            fontSize: coolingTime,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.005,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              tatlilar[currentIndex].text,
-                              style: GoogleFonts.cormorantInfant(
-                                  fontSize: textFontSize,
-                                  fontWeight: FontWeight.w900),
-                            ),
-                            ElevatedButton(
-                              onPressed: navigateToRecipePage,
-                              style: ElevatedButton.styleFrom(
-                                primary:
-                                    tatlilar[currentIndex].recipeButtonColor,
-                                onPrimary: Colors.white,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal:
-                                        MediaQuery.of(context).size.height *
-                                            0.03),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                elevation: 3,
-                              ),
-                              child: Text(
-                                tatlilar[currentIndex].recipeTitle,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                tatlilar[currentIndex].title,
                                 style: GoogleFonts.caveat(
-                                    fontSize: recipeTitleFontSize,
-                                    fontWeight: FontWeight.w500),
+                                    fontSize: titleFontSize,
+                                    fontWeight: FontWeight.w900),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.01,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.21,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.06,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.black,
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'KAÇ KİŞİLİK',
+                                          style: GoogleFonts.caveat(
+                                              fontSize: personTitleFontSize,
+                                              fontWeight: FontWeight.w900),
+                                        ),
+                                        Text(
+                                          tatlilar[currentIndex].person,
+                                          style: GoogleFonts.caveat(
+                                              fontSize: personFontSize,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.24,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.06,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.black,
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'HAZIRLAMA SÜRESİ',
+                                          style: GoogleFonts.caveat(
+                                              fontSize: titlePreparationTime,
+                                              fontWeight: FontWeight.w900),
+                                        ),
+                                        Text(
+                                          tatlilar[currentIndex]
+                                              .preparationTime,
+                                          style: GoogleFonts.caveat(
+                                              fontSize: preparationTime,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.21,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.06,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.black,
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'SOĞUTMA SÜRESİ',
+                                          style: GoogleFonts.caveat(
+                                              fontSize: titleCoolingTime,
+                                              fontWeight: FontWeight.w900),
+                                        ),
+                                        Text(
+                                          tatlilar[currentIndex].coolingTime,
+                                          style: GoogleFonts.caveat(
+                                              fontSize: coolingTime,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.005,
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                tatlilar[currentIndex].text,
+                                style: GoogleFonts.cormorantInfant(
+                                    fontSize: textFontSize,
+                                    fontWeight: FontWeight.w900),
+                              ),
+                              ElevatedButton(
+                                onPressed: navigateToRecipePage,
+                                style: ElevatedButton.styleFrom(
+                                  primary:
+                                      tatlilar[currentIndex].recipeButtonColor,
+                                  onPrimary: Colors.white,
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal:
+                                          MediaQuery.of(context).size.height *
+                                              0.03),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 3,
+                                ),
+                                child: Text(
+                                  tatlilar[currentIndex].recipeTitle,
+                                  style: GoogleFonts.caveat(
+                                      fontSize: recipeTitleFontSize,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
