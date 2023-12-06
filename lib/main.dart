@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:foodapp/views/salata.dart';
-import 'package:foodapp/views/pizza.dart';
-import 'package:foodapp/views/makarna.dart';
-import 'package:foodapp/views/tatli.dart';
-import 'package:foodapp/views/iletisim.dart';
+import 'package:foodapp/views/ev-yemekleri-sayfa.dart';
+import 'package:foodapp/views/salatalar-sayfa.dart';
+import 'package:foodapp/views/pizzalar-sayfa.dart';
+import 'package:foodapp/views/makarnalar-sayfa.dart';
+import 'package:foodapp/views/tatlilar-sayfa.dart';
+import 'package:foodapp/views/iletisim-sayfa.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:firebase_database/firebase_database.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,14 +25,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
 class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double titleFontSize;
     if (MediaQuery.of(context).size.shortestSide < 400) {
-      titleFontSize = 15;
+      titleFontSize = 12;
     } else if (MediaQuery.of(context).size.shortestSide < 600) {
       titleFontSize = 25;
     } else {
@@ -51,6 +49,7 @@ class Main extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
@@ -58,15 +57,18 @@ class Main extends StatelessWidget {
                       context,
                       PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) {
-                          return Salata();
+                          return EvYemegi();
                         },
-                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
                           const begin = Offset(1.0, 0.0);
                           const end = Offset.zero;
                           const curve = Curves.easeInOut;
-                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
                           var offsetAnimation = animation.drive(tween);
-                          return SlideTransition(position: offsetAnimation, child: child);
+                          return SlideTransition(
+                              position: offsetAnimation, child: child);
                         },
                       ),
                     );
@@ -76,14 +78,63 @@ class Main extends StatelessWidget {
                     onPrimary: Colors.white,
                   ),
                   child: Row(
-                    
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.asset(
+                          'assets/images/menu/ev-yemegi.png',
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.12,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.03),
+                      Text(
+                        'EV YEMEKLERİ',
+                        style: GoogleFonts.caveat(
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.012),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return Salata();
+                        },
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          const begin = Offset(1.0, 0.0);
+                          const end = Offset.zero;
+                          const curve = Curves.easeInOut;
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
+                          var offsetAnimation = animation.drive(tween);
+                          return SlideTransition(
+                              position: offsetAnimation, child: child);
+                        },
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    onPrimary: Colors.white,
+                  ),
+                  child: Row(
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(30.0),
                         child: Image.asset(
                           'assets/images/menu/salata.png',
                           width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.15,
+                          height: MediaQuery.of(context).size.height * 0.12,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -108,13 +159,16 @@ class Main extends StatelessWidget {
                         pageBuilder: (context, animation, secondaryAnimation) {
                           return Pizza();
                         },
-                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
                           const begin = Offset(1.0, 0.0);
                           const end = Offset.zero;
                           const curve = Curves.easeInOut;
-                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
                           var offsetAnimation = animation.drive(tween);
-                          return SlideTransition(position: offsetAnimation, child: child);
+                          return SlideTransition(
+                              position: offsetAnimation, child: child);
                         },
                       ),
                     );
@@ -130,7 +184,7 @@ class Main extends StatelessWidget {
                         child: Image.asset(
                           'assets/images/menu/pizza.jpg',
                           width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.15,
+                          height: MediaQuery.of(context).size.height * 0.12,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -155,13 +209,16 @@ class Main extends StatelessWidget {
                         pageBuilder: (context, animation, secondaryAnimation) {
                           return Makarna();
                         },
-                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
                           const begin = Offset(1.0, 0.0);
                           const end = Offset.zero;
                           const curve = Curves.easeInOut;
-                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
                           var offsetAnimation = animation.drive(tween);
-                          return SlideTransition(position: offsetAnimation, child: child);
+                          return SlideTransition(
+                              position: offsetAnimation, child: child);
                         },
                       ),
                     );
@@ -177,7 +234,7 @@ class Main extends StatelessWidget {
                         child: Image.asset(
                           'assets/images/menu/makarna.jpg',
                           width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.15,
+                          height: MediaQuery.of(context).size.height * 0.12,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -202,13 +259,16 @@ class Main extends StatelessWidget {
                         pageBuilder: (context, animation, secondaryAnimation) {
                           return Tatli();
                         },
-                        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
                           const begin = Offset(1.0, 0.0);
                           const end = Offset.zero;
                           const curve = Curves.easeInOut;
-                          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
                           var offsetAnimation = animation.drive(tween);
-                          return SlideTransition(position: offsetAnimation, child: child);
+                          return SlideTransition(
+                              position: offsetAnimation, child: child);
                         },
                       ),
                     );
@@ -224,7 +284,7 @@ class Main extends StatelessWidget {
                         child: Image.asset(
                           'assets/images/menu/tatli.png',
                           width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.15,
+                          height: MediaQuery.of(context).size.height * 0.12,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -282,4 +342,3 @@ class Main extends StatelessWidget {
     );
   }
 }
-
